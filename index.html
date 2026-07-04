@@ -804,7 +804,7 @@
                             
                             <div class="charts-container">
                                 <!-- Chart 1: Conversion Rate -->
-                                <div class="chart-card-wrapper">
+                                <div class="chart-card-wrapper width-full">
                                     <div class="chart-header-inline">
                                         <span class="chart-icon">&para;</span>
                                         <h4>Conversion Rate Comparison</h4>
@@ -832,116 +832,6 @@
                                         </svg>
                                     </div>
                                     <p class="chart-caption">Primary Metric: The Treatment group shows a significant, high-converting lift.</p>
-                                </div>
-
-                                <!-- Chart 2: Time Spent -->
-                                <div class="chart-card-wrapper">
-                                    <div class="chart-header-inline">
-                                        <span class="chart-icon">&para;</span>
-                                        <h4>Time Spent Distribution</h4>
-                                    </div>
-                                    <div class="chart-box">
-                                        <svg viewBox="0 0 320 200" class="svg-chart">
-                                            <line x1="40" y1="165" x2="300" y2="165" stroke="rgba(255,255,255,0.1)" />
-                                            <!-- Normal Curve representing overlapping distributions -->
-                                            <path d="M 40 165 C 100 40, 160 40, 220 165" fill="rgba(148, 163, 184, 0.1)" stroke="#94a3b8" stroke-width="2" stroke-dasharray="3,3" />
-                                            <path d="M 42 165 C 102 42, 162 38, 222 165" fill="rgba(168, 85, 247, 0.05)" stroke="#a855f7" stroke-width="2" />
-                                            
-                                            <text x="130" y="182" class="chart-axis-text" text-anchor="middle">Time Spent (Seconds)</text>
-                                            <text x="235" y="40" class="chart-axis-text" fill="#94a3b8">-- Control</text>
-                                            <text x="235" y="60" class="chart-axis-text" fill="#a855f7">&mdash; Treatment</text>
-                                        </svg>
-                                    </div>
-                                    <p class="chart-caption">Guardrail: Density curves overlap, indicating no loss in user session length.</p>
-                                </div>
-
-                                <!-- Chart 3: Page Views -->
-                                <div class="chart-card-wrapper">
-                                    <div class="chart-header-inline">
-                                        <span class="chart-icon">&para;</span>
-                                        <h4>Page Views Distribution</h4>
-                                    </div>
-                                    <div class="chart-box">
-                                        <svg viewBox="0 0 320 200" class="svg-chart">
-                                            <line x1="40" y1="165" x2="300" y2="165" stroke="rgba(255,255,255,0.1)" />
-                                            
-                                            <!-- PV 1 -->
-                                            <rect x="65" y="110" width="16" height="55" fill="#475569" rx="2" />
-                                            <rect x="83" y="108" width="16" height="57" fill="#6366f1" rx="2" />
-                                            <!-- PV 2 -->
-                                            <rect x="120" y="70" width="16" height="95" fill="#475569" rx="2" />
-                                            <rect x="138" y="71" width="16" height="94" fill="#6366f1" rx="2" />
-                                            <!-- PV 3 -->
-                                            <rect x="175" y="90" width="16" height="75" fill="#475569" rx="2" />
-                                            <rect x="193" y="89" width="16" height="76" fill="#6366f1" rx="2" />
-                                            <!-- PV 4+ -->
-                                            <rect x="230" y="130" width="16" height="35" fill="#475569" rx="2" />
-                                            <rect x="248" y="128" width="16" height="37" fill="#6366f1" rx="2" />
-                                            
-                                            <text x="82" y="182" class="chart-axis-text" text-anchor="middle">1 View</text>
-                                            <text x="137" y="182" class="chart-axis-text" text-anchor="middle">2 Views</text>
-                                            <text x="192" y="182" class="chart-axis-text" text-anchor="middle">3 Views</text>
-                                            <text x="247" y="182" class="chart-axis-text" text-anchor="middle">4+ Views</text>
-                                        </svg>
-                                    </div>
-                                    <p class="chart-caption">Guardrail: Frequency distributions of Page Views are virtually identical.</p>
-                                </div>
-
-                                <!-- Chart 4: Device Distribution -->
-                                <div class="chart-card-wrapper">
-                                    <div class="chart-header-inline">
-                                        <span class="chart-icon">&para;</span>
-                                        <h4>Device Distribution</h4>
-                                    </div>
-                                    <div class="chart-box">
-                                        <svg viewBox="0 0 320 200" class="svg-chart">
-                                            <line x1="40" y1="165" x2="300" y2="165" stroke="rgba(255,255,255,0.1)" />
-                                            
-                                            <!-- Mobile -->
-                                            <rect x="70" y="80" width="18" height="85" fill="#475569" rx="2" />
-                                            <rect x="90" y="81" width="18" height="84" fill="#a855f7" rx="2" />
-                                            <!-- Desktop -->
-                                            <rect x="150" y="90" width="18" height="75" fill="#475569" rx="2" />
-                                            <rect x="170" y="89" width="18" height="76" fill="#a855f7" rx="2" />
-                                            <!-- Tablet -->
-                                            <rect x="230" y="140" width="18" height="25" fill="#475569" rx="2" />
-                                            <rect x="250" y="141" width="18" height="24" fill="#a855f7" rx="2" />
-                                            
-                                            <text x="89" y="182" class="chart-axis-text" text-anchor="middle">Mobile</text>
-                                            <text x="169" y="182" class="chart-axis-text" text-anchor="middle">Desktop</text>
-                                            <text x="249" y="182" class="chart-axis-text" text-anchor="middle">Tablet</text>
-                                        </svg>
-                                    </div>
-                                    <p class="chart-caption">Randomization check: Balanced mobile, desktop, and tablet distribution.</p>
-                                </div>
-
-                                <!-- Chart 5: Location Distribution -->
-                                <div class="chart-card-wrapper width-full">
-                                    <div class="chart-header-inline">
-                                        <span class="chart-icon">&para;</span>
-                                        <h4>Location Distribution</h4>
-                                    </div>
-                                    <div class="chart-box">
-                                        <svg viewBox="0 0 600 160" class="svg-chart">
-                                            <line x1="120" y1="130" x2="560" y2="130" stroke="rgba(255,255,255,0.1)" />
-                                            
-                                            <!-- NA -->
-                                            <text x="110" y="42" class="chart-axis-text" text-anchor="end">North America</text>
-                                            <rect x="120" y="32" width="160" height="12" fill="#475569" rx="2" />
-                                            <rect x="120" y="47" width="158" height="12" fill="#a855f7" rx="2" />
-                                            
-                                            <!-- EU -->
-                                            <text x="110" y="77" class="chart-axis-text" text-anchor="end">Europe</text>
-                                            <rect x="120" y="67" width="120" height="12" fill="#475569" rx="2" />
-                                            <rect x="120" y="82" width="122" height="12" fill="#a855f7" rx="2" />
-                                            
-                                            <!-- APAC -->
-                                            <text x="110" y="112" class="chart-axis-text" text-anchor="end">Asia-Pacific</text>
-                                            <rect x="120" y="102" width="80" height="12" fill="#475569" rx="2" />
-                                            <rect x="120" y="117" width="81" height="12" fill="#a855f7" rx="2" />
-                                        </svg>
-                                    </div>
-                                    <p class="chart-caption">Randomization check: Geographic distribution split evenly across test groups.</p>
                                 </div>
                             </div>
                             
