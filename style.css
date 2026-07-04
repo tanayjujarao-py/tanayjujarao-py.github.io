@@ -1489,6 +1489,10 @@ img {
         --header-height: 70px;
     }
     
+    .hero-section {
+        padding-bottom: 60px;
+    }
+    
     .section-padding {
         padding: 80px 0;
     }
@@ -1596,6 +1600,7 @@ img {
     /* Hero */
     .hero-section {
         padding-top: 100px;
+        padding-bottom: 80px;
     }
     
     .hero-actions {
