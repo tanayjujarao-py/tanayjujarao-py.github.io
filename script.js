@@ -145,4 +145,95 @@ document.addEventListener('DOMContentLoaded', () => {
             child.style.transitionDelay = `${index * 0.1}s`;
         });
     });
+
+    // ==========================================================================
+    // CASE STUDY MODAL FUNCTIONALITY
+    // ==========================================================================
+    const openModalBtns = document.querySelectorAll('.open-case-study-btn');
+    const modal = document.getElementById('ab-test-modal');
+    
+    if (modal) {
+        const closeBtn = modal.querySelector('.modal-close-btn');
+        const backdrop = modal.querySelector('.modal-backdrop');
+        const wrapper = modal.querySelector('.modal-wrapper');
+
+        const openModal = () => {
+            modal.classList.add('open');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('modal-open');
+            animateCounters(modal);
+        };
+
+        const closeModal = () => {
+            modal.classList.remove('open');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('modal-open');
+        };
+
+        openModalBtns.forEach(btn => {
+            btn.addEventListener('click', openModal);
+        });
+
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+        if (backdrop) backdrop.addEventListener('click', closeModal);
+        
+        // Close modal on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('open')) {
+                closeModal();
+            }
+        });
+
+        // Close modal when clicking outside the content (on wrapper but not container)
+        if (wrapper) {
+            wrapper.addEventListener('click', (e) => {
+                if (e.target === wrapper) {
+                    closeModal();
+                }
+            });
+        }
+    }
+
+    // Animated Counters for Stats
+    function animateCounters(modalElement) {
+        const counters = modalElement.querySelectorAll('[data-val]');
+        counters.forEach(counter => {
+            const targetVal = parseFloat(counter.getAttribute('data-val'));
+            const prefix = counter.getAttribute('data-prefix') || '';
+            const suffix = counter.getAttribute('data-suffix') || '';
+            const duration = 1200; // in ms
+            const startVal = 0;
+            const startTime = performance.now();
+
+            const updateCount = (currentTime) => {
+                const elapsedTime = currentTime - startTime;
+                const progress = Math.min(elapsedTime / duration, 1);
+                
+                // Ease out quad formula
+                const easeProgress = progress * (2 - progress);
+                const currentVal = startVal + easeProgress * (targetVal - startVal);
+                
+                if (targetVal % 1 === 0) {
+                    // Integer values
+                    counter.textContent = `${prefix}${Math.floor(currentVal)}${suffix}`;
+                } else {
+                    // Floating point values
+                    counter.textContent = `${prefix}${currentVal.toFixed(2)}${suffix}`;
+                }
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateCount);
+                } else {
+                    if (targetVal % 1 === 0) {
+                        counter.textContent = `${prefix}${targetVal}${suffix}`;
+                    } else {
+                        counter.textContent = `${prefix}${targetVal.toFixed(2)}${suffix}`;
+                    }
+                }
+            };
+
+            requestAnimationFrame(updateCount);
+        });
+    }
 });
+
