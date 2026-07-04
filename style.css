@@ -1635,7 +1635,7 @@ img {
     }
     
     .stat-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 12px;
     }
     
@@ -2344,8 +2344,16 @@ body.modal-open {
         border-radius: 16px;
     }
     
+    .modal-header {
+        padding-top: 44px; /* Space for absolute close button */
+    }
+    
     .modal-title {
         font-size: 1.75rem;
+    }
+    
+    .db-card-value {
+        font-size: 1.4rem; /* Scaled down value text to prevent box overflow */
     }
     
     .charts-container {
@@ -2376,7 +2384,19 @@ body.modal-open {
     }
     
     .modal-container {
-        padding: 20px 16px;
+        padding: 24px 16px;
+    }
+    
+    .modal-close-btn {
+        top: 16px;
+        right: 16px;
+        width: 36px;
+        height: 36px;
+        font-size: 22px; /* Smaller button to prevent overlap on small screens */
+    }
+    
+    .db-card-value {
+        font-size: 1.3rem; /* Further scaling on mobile viewports */
     }
     
     .overview-grid, .dashboard-grid {
