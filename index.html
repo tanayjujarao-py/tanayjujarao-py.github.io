@@ -1,811 +1,854 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanay Jujarao — Data Analyst / Analytics Engineer</title>
-    <meta name="description" content="Portfolio of Tanay Jujarao, Data Analyst transitioning into Analytics Engineering. Building end-to-end data pipelines, cloud warehouses, dbt transformations, and BI dashboards.">
+    <title>Tanay Jujarao — Data Analyst & Analytics Engineer</title>
+    <meta name="description" content="Portfolio of Tanay Jujarao, Data Analyst transitioning into Analytics Engineering. Building automated ELT pipelines with Snowflake, dbt, Airflow, SQL, Python, Tableau, and Power BI.">
     <meta name="keywords" content="Analytics Engineer, Data Analyst, Snowflake, dbt, Airflow, SQL, Python, Tableau, Power BI, Data Engineering, Medallion Architecture, Tanay Jujarao">
     <meta name="author" content="Tanay Jujarao">
-    
-    <!-- Open Graph -->
+
+    <!-- Open Graph / LinkedIn -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Tanay Jujarao — Data Analyst / Analytics Engineer">
+    <meta property="og:title" content="Tanay Jujarao — Data Analyst & Analytics Engineer">
     <meta property="og:description" content="Data Analyst & Analytics Engineer building cloud data pipelines with Snowflake, dbt Core, Apache Airflow, Python, and SQL.">
-    
+    <meta property="og:url" content="https://tanayjujarao-py.github.io">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
 
-    <!-- Sticky Navbar -->
+    <!-- Top Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Sticky Navigation Header -->
     <header class="navbar-header" id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="logo">
-                <span class="logo-prefix">~/</span>tanay<span class="logo-accent">.jujarao</span>
+        <div class="container nav-container">
+            <a href="#hero" class="brand-logo" aria-label="Tanay Jujarao Portfolio Home">
+                <span class="logo-badge">TJ</span>
+                <span>Tanay<span class="logo-accent">.</span></span>
             </a>
-            
-            <!-- Mobile Toggle -->
-            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            
+
+            <!-- Navigation Links -->
             <nav class="nav-menu" id="nav-menu">
                 <a href="#about" class="nav-link">About</a>
-                <a href="#tech-stack" class="nav-link">Tech Stack</a>
-                <a href="#methodologies" class="nav-link">Methodologies</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#projects" class="nav-link">Projects</a>
+                <a href="#technologies" class="nav-link">Technologies</a>
+                <a href="#methodologies" class="nav-link">Methodologies</a>
                 <a href="#education" class="nav-link">Education</a>
                 <a href="#contact" class="nav-link">Contact</a>
-                <a href="assets/resume.pdf" class="btn btn-accent btn-sm nav-resume" download>
+            </nav>
+
+            <!-- Actions: Theme Toggle & Resume -->
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Light and Dark Theme">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+
+                <a href="assets/resume.pdf" class="btn btn-accent btn-sm" download>
                     <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                     Resume
                 </a>
-            </nav>
+
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Mobile Navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero Section (Ref Image 1 Layout Inspired) -->
         <section id="hero" class="hero-section">
-            <div class="container hero-container">
-                <!-- Left: Profile Avatar -->
-                <div class="hero-avatar-container reveal">
-                    <div class="hero-avatar-glow"></div>
-                    <div class="hero-avatar-frame">
-                        <img src="assets/profile.jpg" alt="Tanay Jujarao" class="hero-avatar-img">
-                    </div>
-                </div>
+            <div class="hero-bg-grid"></div>
+            <div class="container hero-grid">
                 
-                <!-- Right: Hero Details -->
-                <div class="hero-text-content reveal">
-                    <div class="terminal-badge">
-                        cat position.json
+                <!-- Hero Left Column -->
+                <div class="hero-content reveal">
+                    <div class="status-pill">
+                        <span class="status-dot"></span>
+                        <span>AVAILABLE FOR ANALYTICS & DATA ROLES</span>
                     </div>
-                    <h1 class="hero-title">Hi, I'm <span class="hero-title-highlight">Tanay Jujarao</span></h1>
-                    
-                    <div class="hero-typewriter">
-                        <span id="typewriter-text">Data Analyst → Analytics Engineer</span>
-                        <span class="typewriter-cursor"></span>
-                    </div>
-                    
-                    <p class="hero-subtext">
-                        Aspiring Data Analyst / Analytics Engineer with hands-on experience building end-to-end data pipelines and turning messy, multi-source datasets into executive-ready dashboards and actionable business insights.
+
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="hero-title-highlight">Tanay Jujarao</span>
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        Data Analyst building automated, production-grade data pipelines & executive dashboards.
                     </p>
-                    
+
+                    <p class="hero-description">
+                        Transitioning into <strong>Analytics Engineering</strong>. Specializing in transforming raw multi-source data into clean Medallion architecture models using <strong>Snowflake, dbt, Airflow, SQL, and Python</strong>, paired with high-impact Tableau & Power BI visual reporting.
+                    </p>
+
                     <div class="hero-actions">
                         <a href="#projects" class="btn btn-primary">
-                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-                            View Featured Projects
+                            <span>View Featured Work</span>
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
                         </a>
                         <a href="assets/resume.pdf" class="btn btn-secondary" download>
                             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                            Download Resume
+                            <span>Download Resume</span>
                         </a>
                     </div>
-                    
+
                     <div class="hero-socials">
-                        <a href="https://linkedin.com/in/tanay-jujarao" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="LinkedIn">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        <a href="https://linkedin.com/in/tanay-jujarao" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn Profile">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                         </a>
-                        <a href="https://github.com/tanayjujarao-py" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="GitHub">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        <a href="https://github.com/tanayjujarao-py" target="_blank" rel="noopener" class="social-link" aria-label="GitHub Profile">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                         </a>
-                        <a href="mailto:tanayjujarao@gmail.com" class="social-icon-link" aria-label="Email">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="mailto:tanayjujarao@gmail.com" class="social-link" aria-label="Send Email">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                         </a>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Quantified Impact Strip -->
-            <div class="container" style="margin-top: 50px;">
-                <div class="impact-strip reveal">
-                    <div class="impact-card">
-                        <div class="impact-val">10M+</div>
-                        <div class="impact-lbl">Orders Processed</div>
+
+                <!-- Hero Right Column (Bento Cards Inspired by Ref Image 1) -->
+                <div class="hero-visual-stack reveal">
+                    <!-- Profile Card -->
+                    <div class="profile-card">
+                        <div class="profile-img-wrap">
+                            <img src="assets/profile.jpg" alt="Tanay Jujarao" class="profile-img">
+                        </div>
+                        <div class="profile-details">
+                            <h3 class="profile-name">Tanay Jujarao</h3>
+                            <span class="profile-role">Analytics Engineering</span>
+                            <span class="profile-location">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                Nanded, Maharashtra, India
+                            </span>
+                        </div>
                     </div>
-                    <div class="impact-card">
-                        <div class="impact-val">$2.1M</div>
-                        <div class="impact-lbl">Revenue Loss Identified</div>
-                    </div>
-                    <div class="impact-card">
-                        <div class="impact-val">3.16x</div>
-                        <div class="impact-lbl">Projected ROI</div>
-                    </div>
-                    <div class="impact-card">
-                        <div class="impact-val">67.3%</div>
-                        <div class="impact-lbl">Predictive Accuracy</div>
+
+                    <!-- Signature Cyan Mission Banner Card -->
+                    <div class="hero-mission-banner">
+                        <span class="mission-tag">CORE MISSION</span>
+                        <p class="mission-text">
+                            "Transforming raw, multi-source enterprise data into automated ELT data pipelines, statistical inferences, and dollar-value business decisions."
+                        </p>
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <!-- Tech Stack Icon Strip -->
-        <section id="tech-stack" class="tech-strip-section">
+        <!-- About & Stat Counter Section -->
+        <section id="about" class="section section-alt">
             <div class="container">
-                <div class="text-center reveal" style="margin-bottom: 25px;">
-                    <h2 class="section-title" style="font-size: 1.6rem;">Technology Stack</h2>
-                    <p class="section-subtitle" style="margin-bottom: 0;">MODERN DATA ECOSYSTEM &amp; TOOLING</p>
-                </div>
-                
-                <div class="tech-grid reveal">
-                    <!-- Snowflake -->
-                    <div class="tech-item" title="Snowflake Data Cloud">
-                        <svg viewBox="0 0 24 24"><path fill="#22D3EE" d="M12 2L9.5 7H14.5L12 2ZM12 22L14.5 17H9.5L12 22ZM2 12L7 9.5V14.5L2 12ZM22 12L17 14.5V9.5L22 12ZM5.6 5.6L10 8.5L8.5 10L5.6 5.6ZM18.4 18.4L14 15.5L15.5 14L18.4 18.4ZM18.4 5.6L15.5 10L14 8.5L18.4 5.6ZM5.6 18.4L8.5 14L10 15.5L5.6 18.4Z"/></svg>
-                        <span class="tech-item-name">Snowflake</span>
-                    </div>
-                    <!-- dbt -->
-                    <div class="tech-item" title="dbt Core">
-                        <svg viewBox="0 0 24 24"><path fill="#22D3EE" d="M12 2L2 7V17L12 22L22 17V7L12 2ZM12 4.2L19.2 7.8L12 11.4L4.8 7.8L12 4.2ZM4 9.2L11 12.7V19.8L4 16.3V9.2ZM13 19.8V12.7L20 9.2V16.3L13 19.8Z"/></svg>
-                        <span class="tech-item-name">dbt Core</span>
-                    </div>
-                    <!-- Airflow -->
-                    <div class="tech-item" title="Apache Airflow">
-                        <svg viewBox="0 0 24 24"><path fill="#22D3EE" d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 14.5h-2v-2h2v2zm0-4h-2V7h2v5.5z"/></svg>
-                        <span class="tech-item-name">Airflow</span>
-                    </div>
-                    <!-- Amazon S3 -->
-                    <div class="tech-item" title="AWS S3 Cloud Storage">
-                        <svg viewBox="0 0 24 24"><path fill="#22D3EE" d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
-                        <span class="tech-item-name">AWS S3</span>
-                    </div>
-                    <!-- Python -->
-                    <div class="tech-item" title="Python Programming">
-                        <svg viewBox="0 0 24 24"><path fill="#22D3EE" d="M14.25.18c-.9 0-1.66.07-2.48.22-3.23.58-3.6 2.1-3.6 4.3v1.85h6.1V8.3H8.17c-2.5 0-4.36 1.1-4.9 3.53-.67 3.03.13 4.28 2.56 4.28h1.56v-2.12c0-2.5 2.1-4.66 4.62-4.66h6.12V7.15c0-3.05-1.95-6.97-8.78-6.97zm.05 1.58c.45 0 .82.37.82.82s-.37.83-.82.83-.82-.37-.82-.82.37-.82.82-.82zm-4.3 12.3c-.46 0-.83.37-.83.82s.37.82.83.82.82-.37.82-.82-.37-.82-.82-.82z"/></svg>
-                        <span class="tech-item-name">Python</span>
-                    </div>
-                    <!-- SQL -->
-                    <div class="tech-item" title="SQL Querying & Modeling">
-                        <svg viewBox="0 0 24 24"><path fill="#22D3EE" d="M12 2C6.48 2 2 4.24 2 7v10c0 2.76 4.48 5 10 5s10-2.24 10-5V7c0-2.76-4.48-5-10-5zm0 2c4.42 0 8 1.79 8 3s-3.58 3-8 3-8-1.79-8-3 3.58-3 8-3zm0 16c-4.42 0-8-1.79-8-3v-2.52c1.86 1.3 4.75 2.02 8 2.02s6.14-.72 8-2.02V17c0 1.21-3.58 3-8 3z"/></svg>
-                        <span class="tech-item-name">SQL</span>
-                    </div>
-                    <!-- Docker -->
-                    <div class="tech-item" title="Docker Containerization">
-                        <svg viewBox="0 0 24 24"><path fill="#22D3EE" d="M13 8h-2v2h2V8zm-3 0H8v2h2V8zM7 8H5v2h2V8zm12 5c-.4-.1-1.3-.2-2-.1-1.2.3-2.1 1.2-2.1 2.3 0 1.5 1.4 2.8 3.5 2.8 2.4 0 3.6-1.5 3.6-2.5 0-1.8-1.7-2.3-3-2.5zM2 13v3c0 2.2 3.6 4 10 4s10-1.8 10-4v-3H2z"/></svg>
-                        <span class="tech-item-name">Docker</span>
-                    </div>
-                    <!-- Power BI -->
-                    <div class="tech-item" title="Power BI Dashboarding">
-                        <svg viewBox="0 0 24 24"><path fill="#22D3EE" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-5h2v5zm4 0h-2V7h2v10zm4 0h-2v-8h2v8z"/></svg>
-                        <span class="tech-item-name">Power BI</span>
-                    </div>
-                    <!-- Tableau -->
-                    <div class="tech-item" title="Tableau Analytics">
-                        <svg viewBox="0 0 24 24"><path fill="#22D3EE" d="M11 2h2v5h-2V2zm-5 5h2v4H6V7zm10 0h2v4h-2V7zM2 11h5v2H2v-2zm15 0h5v2h-5v-2zm-6 3h2v5h-2v-5z"/></svg>
-                        <span class="tech-item-name">Tableau</span>
-                    </div>
-                    <!-- Git -->
-                    <div class="tech-item" title="Git Version Control">
-                        <svg viewBox="0 0 24 24"><path fill="#22D3EE" d="M2.6 10.59L11.4 1.8a2.4 2.4 0 0 1 3.4 0l6.6 6.6a2.4 2.4 0 0 1 0 3.4L12.6 20.6a2.4 2.4 0 0 1-3.4 0L2.6 14a2.4 2.4 0 0 1 0-3.41z"/></svg>
-                        <span class="tech-item-name">Git</span>
-                    </div>
-                    <!-- GitHub -->
-                    <div class="tech-item" title="GitHub Repositories">
-                        <svg viewBox="0 0 24 24"><path fill="#22D3EE" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-                        <span class="tech-item-name">GitHub</span>
-                    </div>
-                    <!-- Jupyter -->
-                    <div class="tech-item" title="Jupyter Notebooks">
-                        <svg viewBox="0 0 24 24"><path fill="#22D3EE" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-                        <span class="tech-item-name">Jupyter</span>
-                    </div>
-                    <!-- Pandas -->
-                    <div class="tech-item" title="Pandas Data Wrangling">
-                        <svg viewBox="0 0 24 24"><path fill="#22D3EE" d="M4 3h4v18H4V3zm6 0h4v18h-4V3zm6 0h4v18h-4V3z"/></svg>
-                        <span class="tech-item-name">Pandas</span>
-                    </div>
-                    <!-- NumPy -->
-                    <div class="tech-item" title="NumPy Numerical Computing">
-                        <svg viewBox="0 0 24 24"><path fill="#22D3EE" d="M12 2L2 7v10l10 5 10-5V7l-10-5zm0 2.2l7.2 3.6L12 11.4 4.8 7.8 12 4.2z"/></svg>
-                        <span class="tech-item-name">NumPy</span>
-                    </div>
-                    <!-- Scikit-Learn -->
-                    <div class="tech-item" title="Scikit-Learn Machine Learning">
-                        <svg viewBox="0 0 24 24"><path fill="#22D3EE" d="M12 2L2 7v10l10 5 10-5V7l-10-5z"/></svg>
-                        <span class="tech-item-name">Scikit-Learn</span>
-                    </div>
-                    <!-- Excel -->
-                    <div class="tech-item" title="MS Excel Power Query & Pivot Tables">
-                        <svg viewBox="0 0 24 24"><path fill="#22D3EE" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/></svg>
-                        <span class="tech-item-name">MS Excel</span>
-                    </div>
-                    <!-- MySQL -->
-                    <div class="tech-item" title="MySQL Relational Database">
-                        <svg viewBox="0 0 24 24"><path fill="#22D3EE" d="M12 3C6.5 3 2 6.5 2 11c0 3.5 2.8 6.5 7 7.5V21l4-3h1c5.5 0 10-3.5 10-7s-4.5-8-10-8z"/></svg>
-                        <span class="tech-item-name">MySQL</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="about-section section-padding">
-            <div class="container">
-                <div class="text-center reveal">
-                    <h2 class="section-title">About Me</h2>
-                    <p class="section-subtitle">BACKGROUND &amp; CAREER POSITIONING</p>
-                </div>
-                
                 <div class="about-grid">
-                    <!-- Bio & Identity -->
-                    <div class="about-text-content reveal">
-                        <div class="terminal-badge">
-                            cat about.md
-                        </div>
+                    <div class="about-text reveal">
+                        <div class="section-tag">BACKGROUND & IMPACT</div>
+                        <h2 class="section-title">Turning Messy Multi-Source Data into Quantified Outcomes</h2>
                         <p>
-                            I am an <strong>Aspiring Data Analyst / Analytics Engineer</strong> with hands-on experience building end-to-end data pipelines and turning messy, multi-source datasets into executive-ready dashboards and actionable business insights.
+                            I am a Data Analyst transitioning into <strong>Analytics Engineering</strong> with a deep passion for modern data stack tooling. My work sits at the intersection of robust data transformation (dbt Core, Snowflake, Apache Airflow), statistical experimentation (A/B testing, hypothesis testing), and executive visualization (Tableau, Power BI).
                         </p>
                         <p>
-                            My technical experience spans the full <strong>modern data stack</strong> — from cloud data lakes and warehousing (AWS S3, Snowflake) to transformation and orchestration (dbt Core, Apache Airflow) — combined with strong statistical analysis, BI dashboarding, and stakeholder communication skills developed through real-world project work.
+                            Whether it's building Bronze/Silver/Gold layered architectures to automate retail analytics or conducting cohort analyses that recover <strong>$853K in annual churn revenue</strong>, I focus on building reliable, self-service data systems that drive real dollars.
                         </p>
                     </div>
-                    
-                    <!-- Context Cards (Education, Location) -->
-                    <div class="about-cards-container reveal" id="education">
-                        <!-- Education Card -->
-                        <div class="info-card">
-                            <div class="info-card-header">
-                                <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
-                                <h3>Education</h3>
-                            </div>
-                            <div class="info-card-body">
-                                <p class="degree">Bachelor of Computer Applications (BCA)</p>
-                                <p class="institution">ITM College (Institute of Technology and Management)</p>
-                                <p class="location-detail">1st Year Student</p>
-                            </div>
+
+                    <!-- Stat Row Grid (4 Strong Resume Numbers) -->
+                    <div class="stats-grid reveal">
+                        <div class="stat-card">
+                            <div class="stat-number">500K<span class="stat-accent">+</span></div>
+                            <div class="stat-label">User Sessions & Order Records Analyzed</div>
                         </div>
 
-                        <!-- Location & Details Card -->
-                        <div class="info-card">
-                            <div class="info-card-header">
-                                <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                                <h3>Location &amp; Availability</h3>
-                            </div>
-                            <div class="info-card-body">
-                                <p class="degree" style="font-size: 0.9rem; color: var(--text-primary);">Nanded, Maharashtra, India</p>
-                                <p class="timeline">Open to remote roles and on-site opportunities / internships globally.</p>
-                            </div>
+                        <div class="stat-card">
+                            <div class="stat-number">3.16<span class="stat-accent">x</span></div>
+                            <div class="stat-label">ROI Delivered on Customer Interventions</div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Methodologies Section -->
-        <section id="methodologies" class="section-padding" style="background: rgba(15, 23, 42, 0.4); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
-            <div class="container">
-                <div class="text-center reveal">
-                    <h2 class="section-title">Engineering &amp; Analytics Methodologies</h2>
-                    <p class="section-subtitle">ARCHITECTURE &amp; DATA INFRASTRUCTURE PATTERNS</p>
-                </div>
-                
-                <div class="methodologies-grid reveal">
-                    <!-- Medallion -->
-                    <div class="methodology-card">
-                        <div class="methodology-icon-box">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                        <div class="stat-card">
+                            <div class="stat-number"><span class="stat-accent">$</span>853K</div>
+                            <div class="stat-label">Annual Churn Revenue Recovery Modeled</div>
                         </div>
-                        <h3 class="methodology-title">Medallion Architecture</h3>
-                        <p class="methodology-desc">Structuring raw ingestion (Bronze), cleansed transformations (Silver), and aggregated BI marts (Gold).</p>
-                    </div>
-                    
-                    <!-- ELT vs ETL -->
-                    <div class="methodology-card">
-                        <div class="methodology-icon-box">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+
+                        <div class="stat-card">
+                            <div class="stat-number"><span class="stat-accent">$</span>9.6M</div>
+                            <div class="stat-label">Sales Tracked via Star-Schema Dashboards</div>
                         </div>
-                        <h3 class="methodology-title">ELT Pipeline Design</h3>
-                        <p class="methodology-desc">Loading raw data directly into cloud data warehouses before performing SQL/dbt transformations at scale.</p>
-                    </div>
-                    
-                    <!-- Incremental Processing -->
-                    <div class="methodology-card">
-                        <div class="methodology-icon-box">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
-                        </div>
-                        <h3 class="methodology-title">Incremental MERGE Strategies</h3>
-                        <p class="methodology-desc">Optimizing compute costs by processing only new or modified records using dbt incremental models.</p>
-                    </div>
-                    
-                    <!-- SCD Type 2 -->
-                    <div class="methodology-card">
-                        <div class="methodology-icon-box">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                        </div>
-                        <h3 class="methodology-title">Slowly Changing Dimensions (SCD2)</h3>
-                        <p class="methodology-desc">Preserving full historical dimension changes over time using dbt snapshots and timestamp tracking.</p>
-                    </div>
-                    
-                    <!-- Star Schema -->
-                    <div class="methodology-card">
-                        <div class="methodology-icon-box">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        </div>
-                        <h3 class="methodology-title">Kimball Dimensional Modeling</h3>
-                        <p class="methodology-desc">Designing denormalized Fact and Dimension star schemas optimized for high-speed BI reporting.</p>
-                    </div>
-                    
-                    <!-- Data Quality -->
-                    <div class="methodology-card">
-                        <div class="methodology-icon-box">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 11 13 15 9"/></svg>
-                        </div>
-                        <h3 class="methodology-title">Test-Driven Data Quality</h3>
-                        <p class="methodology-desc">Preventing pipeline silent failures using dbt singular and generic tests (unique, not_null, accepted_values).</p>
-                    </div>
-                    
-                    <!-- Statistical Testing -->
-                    <div class="methodology-card">
-                        <div class="methodology-icon-box">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                        </div>
-                        <h3 class="methodology-title">Statistical Experimentation</h3>
-                        <p class="methodology-desc">Applying hypothesis testing (Z-tests, Welch's t-tests, Chi-square) to validate product &amp; business metrics.</p>
-                    </div>
-                    
-                    <!-- Lineage -->
-                    <div class="methodology-card">
-                        <div class="methodology-icon-box">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-                        </div>
-                        <h3 class="methodology-title">Data Lineage &amp; Governance</h3>
-                        <p class="methodology-desc">Documenting column-level lineage, DAG dependencies, and schema contracts for enterprise visibility.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="skills-section section-padding">
+        <section id="skills" class="section">
             <div class="container">
-                <div class="text-center reveal">
-                    <h2 class="section-title">Skills &amp; Technical Capabilities</h2>
-                    <p class="section-subtitle">8 CATEGORIZED CORE COMPETENCIES</p>
+                <div class="section-header center reveal">
+                    <div class="section-tag">CORE COMPETENCIES</div>
+                    <h2 class="section-title">Technical Expertise & Toolset</h2>
+                    <p class="section-subtitle">Grouped across data engineering, statistical inference, visualization, and cloud tooling.</p>
                 </div>
-                
-                <div class="skills-category-grid reveal">
-                    <!-- Category 1: Data Engineering -->
+
+                <div class="skills-grid reveal">
+                    <!-- Languages & Querying -->
                     <div class="skill-category-card">
-                        <div class="category-header">
-                            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-                            <h3 class="category-title">Data Engineering &amp; Modern Data Stack</h3>
+                        <div class="skill-category-header">
+                            <div class="skill-icon-wrap">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                            </div>
+                            <h3 class="skill-category-title">Languages & Querying</h3>
                         </div>
-                        <div class="tags-container">
-                            <span class="tag">Snowflake</span>
-                            <span class="tag">dbt Core</span>
-                            <span class="tag">Apache Airflow</span>
-                            <span class="tag">Amazon S3</span>
-                            <span class="tag">Medallion Architecture</span>
-                            <span class="tag">ELT Pipeline Design</span>
-                            <span class="tag">Data Lineage</span>
-                            <span class="tag">Incremental Modeling</span>
-                            <span class="tag">SCD Type 2 (Snapshots)</span>
-                            <span class="tag">Data Quality Testing</span>
-                            <span class="tag">Docker</span>
+                        <div class="skill-tags">
+                            <span class="skill-tag">SQL (CTEs, Window Functions, Joins)</span>
+                            <span class="skill-tag">Python (Pandas, NumPy)</span>
+                            <span class="skill-tag">MySQL</span>
                         </div>
                     </div>
 
-                    <!-- Category 2: Languages & Databases -->
+                    <!-- Data Engineering & Orchestration -->
                     <div class="skill-category-card">
-                        <div class="category-header">
-                            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                            <h3 class="category-title">Languages &amp; Databases</h3>
+                        <div class="skill-category-header">
+                            <div class="skill-icon-wrap">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                            </div>
+                            <h3 class="skill-category-title">Data Engineering</h3>
                         </div>
-                        <div class="tags-container">
-                            <span class="tag">Python</span>
-                            <span class="tag">SQL (CTEs, Window Functions, Joins)</span>
-                            <span class="tag">MySQL</span>
-                            <span class="tag">Jinja (Templating)</span>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Snowflake</span>
+                            <span class="skill-tag">dbt (Models, Seeds, Macros, Tests)</span>
+                            <span class="skill-tag">Apache Airflow</span>
+                            <span class="skill-tag">AWS S3</span>
+                            <span class="skill-tag">Medallion ELT Architecture</span>
+                            <span class="skill-tag">SCD Type 2 Snapshots</span>
                         </div>
                     </div>
 
-                    <!-- Category 3: Python Libraries -->
+                    <!-- Analysis & Statistics -->
                     <div class="skill-category-card">
-                        <div class="category-header">
-                            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-                            <h3 class="category-title">Python Libraries</h3>
+                        <div class="skill-category-header">
+                            <div class="skill-icon-wrap">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                            </div>
+                            <h3 class="skill-category-title">Analysis & Statistics</h3>
                         </div>
-                        <div class="tags-container">
-                            <span class="tag">Pandas</span>
-                            <span class="tag">NumPy</span>
-                            <span class="tag">Matplotlib</span>
-                            <span class="tag">Scikit-Learn</span>
-                            <span class="tag">SciPy</span>
-                            <span class="tag">Statsmodels</span>
+                        <div class="skill-tags">
+                            <span class="skill-tag">A/B Testing</span>
+                            <span class="skill-tag">Two-Proportion Z-Test</span>
+                            <span class="skill-tag">Chi-Square Tests</span>
+                            <span class="skill-tag">Welch's t-test</span>
+                            <span class="skill-tag">Cohort Analysis</span>
+                            <span class="skill-tag">RFM Modeling</span>
+                            <span class="skill-tag">Churn & ROI Analysis</span>
                         </div>
                     </div>
 
-                    <!-- Category 4: Machine Learning -->
+                    <!-- BI & Visualization -->
                     <div class="skill-category-card">
-                        <div class="category-header">
-                            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-                            <h3 class="category-title">Machine Learning</h3>
+                        <div class="skill-category-header">
+                            <div class="skill-icon-wrap">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                            </div>
+                            <h3 class="skill-category-title">BI & Visualization</h3>
                         </div>
-                        <div class="tags-container">
-                            <span class="tag">Decision Trees</span>
-                            <span class="tag">Random Forest</span>
-                            <span class="tag">XGBoost</span>
-                            <span class="tag">Model Evaluation</span>
-                            <span class="tag">Cross-Validation</span>
-                            <span class="tag">Hyperparameter Tuning</span>
-                            <span class="tag">One-Hot Encoding</span>
-                            <span class="tag">Data Leakage Prevention</span>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Power BI (DAX, Power Query)</span>
+                            <span class="skill-tag">Tableau (LOD Expressions)</span>
+                            <span class="skill-tag">Star-Schema Data Modeling</span>
+                            <span class="skill-tag">MS Excel (Pivot, Power Query)</span>
                         </div>
                     </div>
 
-                    <!-- Category 5: Analytics & Statistics -->
+                    <!-- Machine Learning & Frameworks -->
                     <div class="skill-category-card">
-                        <div class="category-header">
-                            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                            <h3 class="category-title">Analytics &amp; Statistics</h3>
+                        <div class="skill-category-header">
+                            <div class="skill-icon-wrap">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                            </div>
+                            <h3 class="skill-category-title">Libraries & ML</h3>
                         </div>
-                        <div class="tags-container">
-                            <span class="tag">A/B Testing</span>
-                            <span class="tag">Hypothesis Testing</span>
-                            <span class="tag">Two-Proportion Z-Test</span>
-                            <span class="tag">Welch's t-Test</span>
-                            <span class="tag">Chi-Square Test</span>
-                            <span class="tag">Confidence Intervals</span>
-                            <span class="tag">Cohort Analysis</span>
-                            <span class="tag">RFM Modeling</span>
-                            <span class="tag">Churn Analysis</span>
-                            <span class="tag">ROI Modeling</span>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Scikit-Learn</span>
+                            <span class="skill-tag">SciPy & Statsmodels</span>
+                            <span class="skill-tag">Matplotlib</span>
+                            <span class="skill-tag">XGBoost</span>
+                            <span class="skill-tag">Cross-Validation</span>
                         </div>
                     </div>
 
-                    <!-- Category 6: BI & Visualization -->
+                    <!-- Workflow & Tools -->
                     <div class="skill-category-card">
-                        <div class="category-header">
-                            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-                            <h3 class="category-title">BI &amp; Visualization</h3>
+                        <div class="skill-category-header">
+                            <div class="skill-icon-wrap">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                            </div>
+                            <h3 class="skill-category-title">Workflow & Tools</h3>
                         </div>
-                        <div class="tags-container">
-                            <span class="tag">Tableau (LOD Expressions, Calculated Fields)</span>
-                            <span class="tag">Power BI (DAX, Power Query, Star Schema)</span>
-                            <span class="tag">MS Excel (Pivot Tables, Power Query)</span>
-                        </div>
-                    </div>
-
-                    <!-- Category 7: Tools & Platforms -->
-                    <div class="skill-category-card">
-                        <div class="category-header">
-                            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
-                            <h3 class="category-title">Tools &amp; Platforms</h3>
-                        </div>
-                        <div class="tags-container">
-                            <span class="tag">Git</span>
-                            <span class="tag">GitHub</span>
-                            <span class="tag">Jupyter Notebook</span>
-                            <span class="tag">VS Code</span>
-                            <span class="tag">AWS IAM</span>
-                            <span class="tag">Snowflake Storage Integration</span>
-                        </div>
-                    </div>
-
-                    <!-- Category 8: Soft Skills -->
-                    <div class="skill-category-card">
-                        <div class="category-header">
-                            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                            <h3 class="category-title">Soft Skills</h3>
-                        </div>
-                        <div class="tags-container">
-                            <span class="tag">Stakeholder Management</span>
-                            <span class="tag">Business Insights Presentation</span>
-                            <span class="tag">Technical Documentation</span>
-                            <span class="tag">Data Storytelling</span>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git / GitHub</span>
+                            <span class="skill-tag">Jupyter Notebook</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Automated Data Testing</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section (6 PROJECTS TOTAL — 3 MAIN FEATURED WITH IMAGES) -->
-        <section id="projects" class="projects-section section-padding">
+        <!-- Featured Projects Section (Top 3 Only) -->
+        <section id="projects" class="section section-alt">
             <div class="container">
-                <div class="text-center reveal">
-                    <h2 class="section-title">Projects Showcase</h2>
-                    <p class="section-subtitle">FEATURED PIPELINES &amp; ANALYTICAL PROJECTS</p>
-                </div>
-                
-                <div class="projects-grid reveal">
-                    <!-- MAIN FEATURED PROJECT 1: Zomato Batch Data Pipeline (With Image) -->
-                    <div class="project-card-featured">
-                        <div class="project-image-container">
-                            <img src="assets/zomato-pipeline.png" alt="Zomato Batch Data Pipeline" class="project-image">
-                        </div>
-                        <div class="project-card-details">
-                            <div class="card-header-bar">
-                                <span class="card-badge-type">★ Main Featured Pipeline</span>
-                            </div>
-                            <h3 class="project-title">Zomato Batch Data Pipeline</h3>
-                            <div class="project-tags">
-                                <span class="tag">AWS S3</span>
-                                <span class="tag">Snowflake</span>
-                                <span class="tag">dbt Core</span>
-                                <span class="tag">Apache Airflow</span>
-                                <span class="tag">Python</span>
-                            </div>
-                            
-                            <div class="architecture-flow">
-                                <span class="flow-node">S3 Bucket</span>
-                                <span class="flow-arrow">&rarr;</span>
-                                <span class="flow-node">Snowflake DW</span>
-                                <span class="flow-arrow">&rarr;</span>
-                                <span class="flow-node">dbt Core</span>
-                                <span class="flow-arrow">&rarr;</span>
-                                <span class="flow-node">Airflow DAG</span>
-                            </div>
-                            
-                            <p class="project-description">
-                                End-to-end Medallion batch pipeline processing 10M+ orders, ~23M order items, and 300K reviews. Features daily orchestrated Airflow DAGs, incremental MERGE models, and keyless S3-Snowflake storage integration.
-                            </p>
-                            
-                            <div class="project-outcome-box">
-                                <span class="outcome-lbl">Quantified Impact</span>
-                                <span class="outcome-val">10M+ Orders Processed &bull; Daily Automated DAG</span>
-                            </div>
-                            
-                            <div class="project-card-footer">
-                                <a href="https://github.com/tanayjujarao-py/zomato-data-engineering" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                                    View on GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- MAIN FEATURED PROJECT 2: Airbnb Data Engineering Pipeline (With Image) -->
-                    <div class="project-card-featured">
-                        <div class="project-image-container">
-                            <img src="assets/airbnb-data-pipeline.png" alt="Airbnb Data Engineering Pipeline" class="project-image">
-                        </div>
-                        <div class="project-card-details">
-                            <div class="card-header-bar">
-                                <span class="card-badge-type">★ Main Featured Pipeline</span>
-                            </div>
-                            <h3 class="project-title">Airbnb Data Engineering Pipeline</h3>
-                            <div class="project-tags">
-                                <span class="tag">AWS S3</span>
-                                <span class="tag">Snowflake</span>
-                                <span class="tag">dbt Core</span>
-                                <span class="tag">Jinja</span>
-                                <span class="tag">SQL</span>
-                            </div>
-                            
-                            <div class="architecture-flow">
-                                <span class="flow-node">S3 Bucket</span>
-                                <span class="flow-arrow">&rarr;</span>
-                                <span class="flow-node">Snowflake DW</span>
-                                <span class="flow-arrow">&rarr;</span>
-                                <span class="flow-node">dbt Transformations</span>
-                            </div>
-                            
-                            <p class="project-description">
-                                Production cloud ELT data pipeline ingesting Airbnb data into Snowflake and transforming it through Bronze/Silver/Gold layers using dbt Core — featuring incremental models, SCD Type 2 snapshots, and custom macros.
-                            </p>
-                            
-                            <div class="project-outcome-box">
-                                <span class="outcome-lbl">Quantified Impact</span>
-                                <span class="outcome-val">SCD Type 2 Snapshots &bull; 100% Test Pass Rate</span>
-                            </div>
-                            
-                            <div class="project-card-footer">
-                                <a href="https://github.com/tanayjujarao-py/airbnb-data-engineering" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                                    View on GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- MAIN FEATURED PROJECT 3: Retail Analytics — ELT Pipeline Project (With Image) -->
-                    <div class="project-card-featured">
-                        <div class="project-image-container">
-                            <img src="assets/retail-elt-pipeline.png" alt="Retail Analytics ELT Pipeline" class="project-image">
-                        </div>
-                        <div class="project-card-details">
-                            <div class="card-header-bar">
-                                <span class="card-badge-type">★ Main Featured Pipeline</span>
-                            </div>
-                            <h3 class="project-title">Retail Analytics — ELT Pipeline Project</h3>
-                            <div class="project-tags">
-                                <span class="tag">dbt Core</span>
-                                <span class="tag">Snowflake</span>
-                                <span class="tag">AWS S3</span>
-                                <span class="tag">Jinja</span>
-                                <span class="tag">Data Quality</span>
-                            </div>
-                            
-                            <div class="architecture-flow">
-                                <span class="flow-node">Bronze (Raw)</span>
-                                <span class="flow-arrow">&rarr;</span>
-                                <span class="flow-node">Silver (Clean)</span>
-                                <span class="flow-arrow">&rarr;</span>
-                                <span class="flow-node">Gold (Marts)</span>
-                            </div>
-                            
-                            <p class="project-description">
-                                Production-style dbt + Snowflake data pipeline. Implements Medallion architecture (Bronze/Silver/Gold), SCD2 snapshots, reusable Jinja macros, and automated test-driven data quality assertions.
-                            </p>
-                            
-                            <div class="project-outcome-box">
-                                <span class="outcome-lbl">Quantified Impact</span>
-                                <span class="outcome-val">Medallion Standard &bull; Reusable Jinja Templates</span>
-                            </div>
-                            
-                            <div class="project-card-footer">
-                                <a href="https://github.com/tanayjujarao-py/retail-analytics-elt-pipeline" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                                    View on GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- PROJECT 4: A/B Testing Analysis (Clean Code-Card, No Image) -->
-                    <div class="project-card-code">
-                        <div class="card-header-bar">
-                            <span class="card-badge-type">Statistical Analytics</span>
-                        </div>
-                        <div class="project-card-details">
-                            <h3 class="project-title">A/B Testing Analysis: Website Background Experiment</h3>
-                            <div class="project-tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">SciPy</span>
-                                <span class="tag">Statsmodels</span>
-                                <span class="tag">Z-Test</span>
-                                <span class="tag">Welch's t-Test</span>
-                            </div>
-                            
-                            <p class="project-description">
-                                Evaluated website background color experiment on ~5,000 user sessions. Applied Two-Proportion Z-Test, Welch's t-tests, and Chi-Square validation to evaluate conversion rate lift.
-                            </p>
-                            
-                            <div class="project-outcome-box">
-                                <span class="outcome-lbl">Quantified Impact</span>
-                                <span class="outcome-val">5.40% &rarr; 14.07% Conversion Lift &bull; p &lt; 0.001</span>
-                            </div>
-                            
-                            <div class="project-card-footer">
-                                <a href="https://github.com/tanayjujarao-py/ab-testing-website-experiment" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
-                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                                    View on GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- PROJECT 5: Customer Churn Mitigation (Clean Code-Card, No Image) -->
-                    <div class="project-card-code">
-                        <div class="card-header-bar">
-                            <span class="card-badge-type">SQL &amp; BI Modeling</span>
-                        </div>
-                        <div class="project-card-details">
-                            <h3 class="project-title">Strategic Customer Churn Mitigation &amp; ROI Modeling</h3>
-                            <div class="project-tags">
-                                <span class="tag">SQL</span>
-                                <span class="tag">Tableau</span>
-                                <span class="tag">Python</span>
-                                <span class="tag">ROI Modeling</span>
-                            </div>
-                            
-                            <p class="project-description">
-                                Cohort analysis across 8K customers &amp; 34K orders. Identified a "Support Death Spiral" where 33% of users drove 67% ($2.1M) of revenue loss, proposing a $270K intervention.
-                            </p>
-                            
-                            <div class="project-outcome-box">
-                                <span class="outcome-lbl">Quantified Impact</span>
-                                <span class="outcome-val">$2.1M Revenue Loss Identified &bull; 3.16x Projected ROI</span>
-                            </div>
-                            
-                            <div class="project-card-footer">
-                                <a href="https://github.com/tanayjujarao-py/Customer-Churn-ROI-Analysis" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
-                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                                    View on GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- PROJECT 6: IPL Crunch '26 (Clean Code-Card, No Image) -->
-                    <div class="project-card-code">
-                        <div class="card-header-bar">
-                            <span class="card-badge-type">Sports Analytics</span>
-                        </div>
-                        <div class="project-card-details">
-                            <h3 class="project-title">IPL Crunch '26 — Ball-by-Ball Cricket Data Analysis</h3>
-                            <div class="project-tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">Pandas</span>
-                                <span class="tag">SQL</span>
-                                <span class="tag">Tableau</span>
-                            </div>
-                            
-                            <p class="project-description">
-                                Analyzed 500K+ ball-by-ball IPL deliveries across multiple seasons, segmenting matches into Powerplay, Middle, and Death overs to find statistical win predictors.
-                            </p>
-                            
-                            <div class="project-outcome-box">
-                                <span class="outcome-lbl">Quantified Impact</span>
-                                <span class="outcome-val">67.3% Powerplay Win Rate &bull; 7x Predictive Gap</span>
-                            </div>
-                            
-                            <div class="project-card-footer">
-                                <a href="https://github.com/tanayjujarao-py/IPL-Crunch-26" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
-                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                                    View on GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="section-header reveal">
+                    <div class="section-tag">FLAGSHIP CASE STUDIES</div>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">Highlighting end-to-end data pipelines, statistical experimental design, and quantified financial impact.</p>
                 </div>
 
-                <!-- GitHub All Repositories Link -->
-                <div class="projects-more-cta reveal">
-                    <a href="https://github.com/tanayjujarao-py?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn btn-accent">
-                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        Explore All Projects on GitHub
-                    </a>
+                <div class="featured-projects-list">
+                    
+                    <!-- Featured Project 1: Zomato Batch Data Pipeline (Flagship Data Engineering #1) -->
+                    <div class="project-card-featured reveal">
+                        <div class="project-media">
+                            <span class="project-flagship-badge">★ FLAGSHIP DATA PIPELINE</span>
+                            <img src="assets/zomato-pipeline.png" alt="Zomato Batch Data Pipeline Architecture (S3 to Snowflake to dbt to Airflow 3)" class="project-img">
+                        </div>
+                        <div class="project-details">
+                            <div>
+                                <span class="project-category-tag">CLOUD DATA ENGINEERING / ANALYTICS ENGINEERING</span>
+                                <h3 class="project-title">Zomato Batch Data Pipeline — S3 → Snowflake → dbt → Airflow 3</h3>
+                                <p class="project-impact-statement">
+                                    Production-style batch ELT pipeline processing 10M+ orders, 23M+ items, and 300K reviews from S3 data lake through Snowflake medallion layers, fully orchestrated daily via Airflow 3 on Docker.
+                                </p>
+
+                                <div class="metric-callout-box">
+                                    <div class="metric-value">10M+ Orders</div>
+                                    <div class="metric-desc">Daily Airflow 3 Orchestration</div>
+                                </div>
+
+                                <ul class="project-bullets">
+                                    <li>Architected a daily batch pipeline pulling 7 raw CSV tables (~2.3 GB) from AWS S3 into Snowflake via keyless IAM Storage Integrations and <code>COPY INTO</code> bulk loading.</li>
+                                    <li>Built a Medallion Architecture (Bronze RAW → Silver STAGING → Gold MARTS) in dbt Core with incremental <code>MERGE</code> materializations for 10M+ fact rows, SCD Type 2 snapshots, and custom Jinja schema macros.</li>
+                                    <li>Orchestrated end-to-end execution using Apache Airflow 3 on Docker (isolated venvs + <code>SQLExecuteQueryOperator</code> + <code>BashOperator</code>) with 100% automated dbt testing and zero credential leaks.</li>
+                                </ul>
+
+                                <div class="project-tech-stack">
+                                    <span class="tech-badge">AWS S3</span>
+                                    <span class="tech-badge">Snowflake</span>
+                                    <span class="tech-badge">dbt Core</span>
+                                    <span class="tech-badge">Apache Airflow 3</span>
+                                    <span class="tech-badge">Python</span>
+                                    <span class="tech-badge">Docker</span>
+                                </div>
+                            </div>
+
+                            <div class="project-footer-actions">
+                                <a href="https://github.com/tanayjujarao-py/zomato-data-engineering" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                    View GitHub Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Project 2: dbt + Snowflake Retail Analytics (Data Engineering #2) -->
+                    <div class="project-card-featured reveal">
+                        <div class="project-media">
+                            <span class="project-flagship-badge">★ DATA ENGINEERING PIPELINE</span>
+                            <img src="assets/retail-elt-pipeline.png" alt="dbt + Snowflake Retail Analytics ELT Pipeline Architecture" class="project-img">
+                        </div>
+                        <div class="project-details">
+                            <div>
+                                <span class="project-category-tag">DATA ENGINEERING / ANALYTICS ENGINEERING</span>
+                                <h3 class="project-title">dbt + Snowflake Retail Analytics — ELT Pipeline</h3>
+                                <p class="project-impact-statement">
+                                    Production-style ELT pipeline built on Snowflake with dbt Bronze/Silver/Gold Medallion architecture and automated testing suites.
+                                </p>
+
+                                <div class="metric-callout-box">
+                                    <div class="metric-value">Medallion Arch.</div>
+                                    <div class="metric-desc">100% Automated Quality Testing</div>
+                                </div>
+
+                                <ul class="project-bullets">
+                                    <li>Architected a layered Medallion pipeline (Bronze → Silver → Gold) on Snowflake using dbt to transform raw retail operational data into analytics-ready data marts.</li>
+                                    <li>Enforced strict data quality via automated dbt testing suites (<code>unique</code>, <code>not_null</code>, <code>accepted_values</code>, custom generic tests).</li>
+                                    <li>Developed reusable Jinja macros, SCD Type 2 snapshots for historical audit tracking, and seed-based lookup tables with comprehensive GitHub documentation.</li>
+                                </ul>
+
+                                <div class="project-tech-stack">
+                                    <span class="tech-badge">dbt Core</span>
+                                    <span class="tech-badge">Snowflake</span>
+                                    <span class="tech-badge">SQL</span>
+                                    <span class="tech-badge">Jinja</span>
+                                    <span class="tech-badge">Python</span>
+                                </div>
+                            </div>
+
+                            <div class="project-footer-actions">
+                                <a href="https://github.com/tanayjujarao-py/dbt-snowflake-data-analytics" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                    View GitHub Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Project 3: Strategic Customer Churn Mitigation & ROI Modeling -->
+                    <div class="project-card-featured reveal">
+                        <div class="project-media">
+                            <img src="assets/customer-churn.png" alt="Customer Churn Mitigation & ROI Modeling Dashboard" class="project-img">
+                        </div>
+                        <div class="project-details">
+                            <div>
+                                <span class="project-category-tag">CHURN ANALYSIS & FINANCIAL MODELING</span>
+                                <h3 class="project-title">Strategic Customer Churn Mitigation & ROI Modeling</h3>
+                                <p class="project-impact-statement">
+                                    Multi-source statistical cohort analysis identifying customer revenue loss drivers and delivering a $270K targeted intervention strategy.
+                                </p>
+
+                                <div class="metric-callout-box">
+                                    <div class="metric-value">3.16x ROI</div>
+                                    <div class="metric-desc">$853K Annual Revenue Recovered</div>
+                                </div>
+
+                                <ul class="project-bullets">
+                                    <li>Analyzed multi-source data across 8K customers and 34K orders using advanced SQL and cohort modeling; identified a "Support Death Spiral" where 33% of churning customers drove 67% ($2.1M) of total revenue loss.</li>
+                                    <li>Built an interactive Tableau dashboard with LOD expressions surfacing a critical 14-day customer activation window.</li>
+                                    <li>Proposed a $270K intervention campaign delivering 3.16x ROI and $853K annual revenue recovery.</li>
+                                </ul>
+
+                                <div class="project-tech-stack">
+                                    <span class="tech-badge">SQL</span>
+                                    <span class="tech-badge">Python</span>
+                                    <span class="tech-badge">Tableau (LOD)</span>
+                                    <span class="tech-badge">Cohort Analysis</span>
+                                    <span class="tech-badge">ROI Modeling</span>
+                                </div>
+                            </div>
+
+                            <div class="project-footer-actions">
+                                <a href="https://github.com/tanayjujarao-py" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                    View GitHub Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Projects (Condensed Grid - Ranked by Importance) -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-tag">ADDITIONAL WORK</div>
+                    <h2 class="section-title">Other Selected Projects</h2>
+                    <p class="section-subtitle">Statistical experimentation, executive BI dashboards, and sports analytics.</p>
+                </div>
+
+                <div class="other-projects-grid reveal">
+                    <!-- Other Project 1: A/B Testing Analysis -->
+                    <div class="project-card-condensed">
+                        <div class="condensed-media">
+                            <img src="assets/ab-test-experiment.png" alt="A/B Testing Analysis Experiment">
+                        </div>
+                        <div class="condensed-content">
+                            <div>
+                                <h4 class="condensed-title">A/B Testing Analysis — Website Background</h4>
+                                <p class="condensed-desc">
+                                    Statistical experiment on ~5,000 sessions using Two-Proportion Z-Tests and Welch's t-tests, validating a +160.5% conversion lift (p &lt; 0.001).
+                                </p>
+                            </div>
+                            <div>
+                                <div class="project-tech-stack" style="margin-bottom: 1rem;">
+                                    <span class="tech-badge">Python</span>
+                                    <span class="tech-badge">Statsmodels</span>
+                                    <span class="tech-badge">SciPy</span>
+                                </div>
+                                <a href="https://github.com/tanayjujarao-py/ab-testing-analysis" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="width: 100%;">
+                                    GitHub Repo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Other Project 2: Classic Model Cars Dashboard -->
+                    <div class="project-card-condensed">
+                        <div class="condensed-media">
+                            <img src="assets/sales-performance.png" alt="Classic Model Cars Sales Dashboard">
+                        </div>
+                        <div class="condensed-content">
+                            <div>
+                                <h4 class="condensed-title">Classic Model Cars — Sales Dashboard</h4>
+                                <p class="condensed-desc">
+                                    Transformed 8 relational tables into a Power BI star-schema data model with DAX measures, surfacing $9.6M in sales and 39.8% profit margin.
+                                </p>
+                            </div>
+                            <div>
+                                <div class="project-tech-stack" style="margin-bottom: 1rem;">
+                                    <span class="tech-badge">Power BI</span>
+                                    <span class="tech-badge">DAX</span>
+                                    <span class="tech-badge">Power Query</span>
+                                </div>
+                                <a href="https://github.com/tanayjujarao-py/classic-car-sales-dashboard" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="width: 100%;">
+                                    GitHub Repo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Other Project 3: IPL Crunch Analytics -->
+                    <div class="project-card-condensed">
+                        <div class="condensed-media">
+                            <img src="assets/ipl-crunch.png" alt="IPL Crunch Cricket Analytics">
+                        </div>
+                        <div class="condensed-content">
+                            <div>
+                                <h4 class="condensed-title">IPL Crunch — Cricket Analytics</h4>
+                                <p class="condensed-desc">
+                                    Interactive Python &amp; Streamlit analytics application performing deep-dive exploratory analysis on IPL player statistics and match outcomes.
+                                </p>
+                            </div>
+                            <div>
+                                <div class="project-tech-stack" style="margin-bottom: 1rem;">
+                                    <span class="tech-badge">Python</span>
+                                    <span class="tech-badge">Pandas</span>
+                                    <span class="tech-badge">Streamlit</span>
+                                </div>
+                                <a href="https://github.com/tanayjujarao-py" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="width: 100%;">
+                                    GitHub Repo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Other Project 4: Cloud ELT Pipeline -->
+                    <div class="project-card-condensed">
+                        <div class="condensed-media">
+                            <img src="assets/airbnb-data-pipeline.png" alt="Cloud ELT Airflow Data Pipeline">
+                        </div>
+                        <div class="condensed-content">
+                            <div>
+                                <h4 class="condensed-title">Automated Cloud ELT Pipeline</h4>
+                                <p class="condensed-desc">
+                                    Multi-stage automated ETL/ELT pipeline orchestrating raw data ingestion from AWS S3 into Snowflake data warehouse with Apache Airflow.
+                                </p>
+                            </div>
+                            <div>
+                                <div class="project-tech-stack" style="margin-bottom: 1rem;">
+                                    <span class="tech-badge">Airflow</span>
+                                    <span class="tech-badge">AWS S3</span>
+                                    <span class="tech-badge">Snowflake</span>
+                                </div>
+                                <a href="https://github.com/tanayjujarao-py" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="width: 100%;">
+                                    GitHub Repo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technologies & Tools Grid (Ref. Image 0 Style) -->
+        <section id="technologies" class="section section-alt">
+            <div class="container">
+                <div class="section-header center reveal">
+                    <div class="section-tag">STACK & TOOLS</div>
+                    <h2 class="section-title">Technologies & Tools</h2>
+                    <p class="section-subtitle">Core platforms and frameworks powering my analytics engineering workflow.</p>
+                </div>
+
+                <div class="tech-grid reveal">
+                    <!-- Python -->
+                    <div class="tech-card">
+                        <div class="tech-icon-wrap">
+                            <svg viewBox="0 0 128 128"><path fill="#3776AB" d="M62.6 0c-15.6 0-25 6.7-25 15.6v11.4h25v3.4H27.3C11.7 30.4 2 39.8 2 55.4s9.7 25 25.3 25h9.3v-12.7c0-10.4 8.7-19.1 19.1-19.1h25c8.7 0 15.6-7 15.6-15.6V15.6C96.3 6.7 82.2 0 62.6 0zm-13 9.3c2.7 0 4.8 2.2 4.8 4.8s-2.2 4.8-4.8 4.8-4.8-2.2-4.8-4.8 2.1-4.8 4.8-4.8z"/><path fill="#FFD43B" d="M65.4 128c15.6 0 25-6.7 25-15.6v-11.4H65.4v-3.4h35.3c15.6 0 25.3-9.4 25.3-25s-9.7-25-25.3-25h-9.3v12.7c0 10.4-8.7 19.1-19.1 19.1h-25c-8.7 0-15.6 7-15.6 15.6v17.3c0 8.9 14.1 15.7 33.7 15.7zm13-9.3c-2.7 0-4.8-2.2-4.8-4.8s2.2-4.8 4.8-4.8 4.8 2.2 4.8 4.8-2.1 4.8-4.8 4.8z"/></svg>
+                        </div>
+                        <span class="tech-name">Python</span>
+                    </div>
+
+                    <!-- SQL / MySQL -->
+                    <div class="tech-card">
+                        <div class="tech-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#00758F" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                        </div>
+                        <span class="tech-name">SQL / MySQL</span>
+                    </div>
+
+                    <!-- Snowflake -->
+                    <div class="tech-card">
+                        <div class="tech-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#29B5E8" stroke-width="2"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07l14.14-14.14"/></svg>
+                        </div>
+                        <span class="tech-name">Snowflake</span>
+                    </div>
+
+                    <!-- dbt Core -->
+                    <div class="tech-card">
+                        <div class="tech-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="#FF694B"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polygon points="2 17 12 22 22 17 12 12 2 17"/></svg>
+                        </div>
+                        <span class="tech-name">dbt Core</span>
+                    </div>
+
+                    <!-- Apache Airflow -->
+                    <div class="tech-card">
+                        <div class="tech-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#017CEE" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <span class="tech-name">Apache Airflow</span>
+                    </div>
+
+                    <!-- AWS S3 -->
+                    <div class="tech-card">
+                        <div class="tech-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="#FF9900"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.8l7 3.5v7l-7 3.5-7-3.5v-7l7-3.5z"/></svg>
+                        </div>
+                        <span class="tech-name">AWS S3</span>
+                    </div>
+
+                    <!-- Power BI -->
+                    <div class="tech-card">
+                        <div class="tech-icon-wrap">
+                            <img src="assets/powerbi.svg" alt="Power BI Logo" style="width: 38px; height: 38px;">
+                        </div>
+                        <span class="tech-name">Power BI</span>
+                    </div>
+
+                    <!-- Tableau -->
+                    <div class="tech-card">
+                        <div class="tech-icon-wrap">
+                            <img src="assets/tableau.svg" alt="Tableau Logo" style="width: 38px; height: 38px;">
+                        </div>
+                        <span class="tech-name">Tableau</span>
+                    </div>
+
+                    <!-- Pandas / NumPy -->
+                    <div class="tech-card">
+                        <div class="tech-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#130654" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+                        </div>
+                        <span class="tech-name">Pandas / NumPy</span>
+                    </div>
+
+                    <!-- Git / GitHub -->
+                    <div class="tech-card">
+                        <div class="tech-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="#F05032"><path d="M21.6 10.9L13.1 2.4c-.6-.6-1.5-.6-2.1 0L8.6 4.8l2.7 2.7c.6-.2 1.3 0 1.8.4.5.5.6 1.2.4 1.8l2.6 2.6c.6-.2 1.3 0 1.8.4.7.7.7 1.8 0 2.5s-1.8.7-2.5 0c-.5-.5-.6-1.2-.4-1.8L12.3 11c-.2.2-.2.5-.2.8 0 .7-.3 1.3-.8 1.8-.7.7-1.8.7-2.5 0s-.7-1.8 0-2.5c.5-.5 1.1-.8 1.8-.8L8 6.7 2.4 12.3c-.6.6-.6 1.5 0 2.1l8.5 8.5c.6.6 1.5.6 2.1 0l8.5-8.5c.6-.6.6-1.6.1-2.1z"/></svg>
+                        </div>
+                        <span class="tech-name">Git &amp; GitHub</span>
+                    </div>
+
+                    <!-- Jupyter -->
+                    <div class="tech-card">
+                        <div class="tech-icon-wrap">
+                            <img src="assets/jupyter.svg" alt="Jupyter Logo" style="width: 38px; height: 38px;">
+                        </div>
+                        <span class="tech-name">Jupyter</span>
+                    </div>
+
+                    <!-- MS Excel -->
+                    <div class="tech-card">
+                        <div class="tech-icon-wrap">
+                            <img src="assets/excel.svg" alt="Excel Logo" style="width: 38px; height: 38px;">
+                        </div>
+                        <span class="tech-name">MS Excel</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodologies / How I Work -->
+        <section id="methodologies" class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-tag">WORKING PHILOSOPHY</div>
+                    <h2 class="section-title">Methodologies & Approach</h2>
+                    <p class="section-subtitle">Principles that guide how I build reliable, production-grade analytics systems.</p>
+                </div>
+
+                <div class="methodologies-grid reveal">
+                    <div class="method-card">
+                        <div class="method-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                        </div>
+                        <h3 class="method-title">Medallion ELT Architecture</h3>
+                        <p class="method-desc">Structuring data transforms into Bronze (raw), Silver (cleansed &amp; tested), and Gold (analytics marts) layers using dbt Core and Snowflake.</p>
+                    </div>
+
+                    <div class="method-card">
+                        <div class="method-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                        </div>
+                        <h3 class="method-title">Statistical Rigor &amp; Testing</h3>
+                        <p class="method-desc">Evaluating business experiments with hypothesis testing, Two-Proportion Z-Tests, Chi-Square randomization checks, and Welch's t-tests.</p>
+                    </div>
+
+                    <div class="method-card">
+                        <div class="method-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <h3 class="method-title">Dollar-Value ROI Modeling</h3>
+                        <p class="method-desc">Translating customer churn and order patterns into direct financial revenue outcomes, intervention payback, and ROI calculations.</p>
+                    </div>
+
+                    <div class="method-card">
+                        <div class="method-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                        </div>
+                        <h3 class="method-title">Executive-Ready BI</h3>
+                        <p class="method-desc">Designing star-schema data models, custom DAX measures, and LOD expressions in Power BI &amp; Tableau for instant stakeholder clarity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications & Education Section -->
+        <section id="education" class="section section-alt">
+            <div class="container">
+                <div class="certs-edu-grid">
+                    
+                    <!-- Left: Certifications -->
+                    <div class="reveal">
+                        <div class="section-tag">CREDENTIALS</div>
+                        <h2 class="section-title">Certifications</h2>
+                        
+                        <div class="certs-list">
+                            <!-- Deloitte -->
+                            <div class="cert-card">
+                                <div class="cert-info">
+                                    <h4>Data Analytics Job Simulation</h4>
+                                    <div class="cert-issuer">Deloitte Australia</div>
+                                    <p class="cert-desc">Industry analytics workflow, reporting automation, and stakeholder communication.</p>
+                                    <a href="assets/certificates/deloitte-analytics.pdf" target="_blank" class="btn btn-secondary btn-sm" style="display: inline-flex; margin-top: 0.25rem;">
+                                        View Certificate ↗
+                                    </a>
+                                </div>
+                                <div class="cert-date">Nov 2025</div>
+                            </div>
+
+                            <!-- IBM -->
+                            <div class="cert-card">
+                                <div class="cert-info">
+                                    <h4>Python for Data Science</h4>
+                                    <div class="cert-issuer">IBM</div>
+                                    <p class="cert-desc">Python, Pandas, NumPy, data manipulation, cleaning, and visualization.</p>
+                                    <a href="assets/certificates/ibm-python.pdf" target="_blank" class="btn btn-secondary btn-sm" style="display: inline-flex; margin-top: 0.25rem;">
+                                        View Certificate ↗
+                                    </a>
+                                </div>
+                                <div class="cert-date">Jan 2026</div>
+                            </div>
+
+                            <!-- TATA -->
+                            <div class="cert-card">
+                                <div class="cert-info">
+                                    <h4>GenAI Powered Data Analytics Simulation</h4>
+                                    <div class="cert-issuer">TATA</div>
+                                    <p class="cert-desc">AI-assisted analysis, prompt engineering, and business problem-solving.</p>
+                                    <a href="assets/certificates/tata-genai.pdf" target="_blank" class="btn btn-secondary btn-sm" style="display: inline-flex; margin-top: 0.25rem;">
+                                        View Certificate ↗
+                                    </a>
+                                </div>
+                                <div class="cert-date">Dec 2025</div>
+                            </div>
+
+                            <!-- Kaggle -->
+                            <div class="cert-card">
+                                <div class="cert-info">
+                                    <h4>Intermediate Machine Learning</h4>
+                                    <div class="cert-issuer">Kaggle</div>
+                                    <p class="cert-desc">XGBoost, Scikit-Learn Pipelines, target encoding, and cross-validation.</p>
+                                    <a href="assets/certificates/kaggle-ml.png" target="_blank" class="btn btn-secondary btn-sm" style="display: inline-flex; margin-top: 0.25rem;">
+                                        View Certificate ↗
+                                    </a>
+                                </div>
+                                <div class="cert-date">Apr 2026</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Education -->
+                    <div class="reveal">
+                        <div class="section-tag">ACADEMIC BACKGROUND</div>
+                        <h2 class="section-title">Education</h2>
+
+                        <div class="edu-card">
+                            <div>
+                                <span class="edu-badge">CURRENT DEGREE</span>
+                                <h3 class="edu-degree">Bachelor of Computer Application (BCA)</h3>
+                                <div class="edu-institution">SSBES ITM — Institute of Technology and Management</div>
+                                <div class="edu-years">1st Year Student • 2026 – 2029</div>
+                                <p style="color: var(--text-muted); font-size: 0.9375rem; line-height: 1.6;">
+                                    Focusing on computer science fundamentals, data structures, relational database management systems (RDBMS), SQL query optimization, and software development methodologies.
+                                </p>
+                            </div>
+
+                            <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle);">
+                                <span style="font-size: 0.8125rem; font-weight: 700; color: var(--accent); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em;">LOCATION</span>
+                                <p style="font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin-top: 0.25rem;">
+                                    Nanded, Maharashtra, India
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="contact-section section-padding">
+        <section id="contact" class="section">
             <div class="container">
                 <div class="contact-card reveal">
-                    <div class="terminal-badge" style="margin-bottom: 16px;">
-                        ~/portfolio $ echo "Let's Connect"
-                    </div>
-                    <h2 class="contact-heading">Let's Build Something Great Together</h2>
-                    <p class="contact-subtext">
-                        I am currently open to Data Analyst, Analytics Engineer, and Data Engineering roles or internship opportunities. Feel free to reach out directly via email or LinkedIn!
+                    <h2>Let's Build Data Systems Together</h2>
+                    <p>
+                        Open to Data Analyst, Junior Analytics Engineer, and Data Engineering roles. Let's connect to discuss how I can help build your data pipelines and dashboards.
                     </p>
-                    
-                    <div class="contact-links-grid">
-                        <a href="mailto:tanayjujarao@gmail.com" class="btn btn-primary">
+
+                    <div class="contact-buttons">
+                        <a href="mailto:tanayjujarao@gmail.com" class="btn contact-btn-light">
                             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                            tanayjujarao@gmail.com
+                            <span>tanayjujarao@gmail.com</span>
                         </a>
-                        <a href="https://linkedin.com/in/tanay-jujarao" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+
+                        <a href="https://linkedin.com/in/tanay-jujarao" target="_blank" rel="noopener" class="btn btn-secondary" style="border-color: rgba(255,255,255,0.3); color: #FFFFFF;">
                             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                            LinkedIn
+                            <span>LinkedIn Profile</span>
                         </a>
-                        <a href="https://github.com/tanayjujarao-py" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                            GitHub
+
+                        <a href="tel:+918600535748" class="btn btn-secondary" style="border-color: rgba(255,255,255,0.3); color: #FFFFFF;">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <span>+91 8600535748</span>
                         </a>
                     </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div>
+                        © 2026 Tanay Jujarao. Built for Analytics &amp; Data Engineering.
+                    </div>
+                    <a href="#hero" class="back-to-top">
+                        <span>Back to top</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+                    </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Tanay Jujarao. Designed with a Modern Analytics Engineering System.</p>
-        </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
-    </button>
-
-    <!-- Custom JavaScript -->
+    <!-- Custom Script -->
     <script src="script.js"></script>
 </body>
 </html>
