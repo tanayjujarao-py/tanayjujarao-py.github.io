@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Active Navigation Highlight
         let currentSectionId = '';
-        const sections = document.querySelectorAll('section');
+        const sections = document.querySelectorAll('section[id]');
         const scrollPosition = scrollY + 200; // Offset for navbar trigger
 
         sections.forEach(section => {
@@ -56,16 +56,16 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     window.addEventListener('scroll', handleScrollEffects, { passive: true });
-    // Run once on load to ensure correct initial state
     handleScrollEffects();
 
-    // Scroll back to top event
-    backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
-    });
+    }
 
     // ==========================================================================
     // MOBILE MENU TOGGLE
@@ -77,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleMenu = () => {
         mobileToggle.classList.toggle('active');
         navMenu.classList.toggle('show');
-        // Prevent body scroll when menu is open
         document.body.style.overflow = navMenu.classList.contains('show') ? 'hidden' : '';
     };
 
@@ -87,28 +86,71 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = '';
     };
 
-    mobileToggle.addEventListener('click', toggleMenu);
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', toggleMenu);
+    }
 
-    // Close menu when clicking a link
     navLinks.forEach(link => {
         link.addEventListener('click', closeMenu);
     });
 
-    // Close menu when clicking outside of it
     document.addEventListener('click', (e) => {
-        if (navMenu.classList.contains('show') && 
+        if (navMenu && navMenu.classList.contains('show') && 
             !navMenu.contains(e.target) && 
             !mobileToggle.contains(e.target)) {
             closeMenu();
         }
     });
 
-    // Handle window resize (close menu if desktop size reached)
     window.addEventListener('resize', () => {
-        if (window.innerWidth > 768 && navMenu.classList.contains('show')) {
+        if (window.innerWidth > 768 && navMenu && navMenu.classList.contains('show')) {
             closeMenu();
         }
     });
+
+    // ==========================================================================
+    // TYPEWRITER ANIMATION IN HERO
+    // ==========================================================================
+    const typewriterElement = document.getElementById('typewriter-text');
+    if (typewriterElement) {
+        const phrases = [
+            "Data Analyst → Analytics Engineer",
+            "Building Cloud Data Pipelines",
+            "Snowflake • dbt Core • Airflow",
+            "Transforming Data into Business Value"
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typeSpeed = 80;
+
+        function typeLoop() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+                typeSpeed = 40;
+            } else {
+                typewriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+                typeSpeed = 80;
+            }
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                typeSpeed = 2200; // Pause at end of phrase
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeLoop, typeSpeed);
+        }
+
+        typeLoop();
+    }
 
     // ==========================================================================
     // INTERSECTION OBSERVER FOR SCROLL REVEAL
@@ -116,16 +158,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const revealElements = document.querySelectorAll('.reveal');
 
     const revealObserverOptions = {
-        root: null, // viewport
-        threshold: 0.1, // trigger when 10% of element is visible
-        rootMargin: '0px 0px -50px 0px' // offset bottom triggers slightly earlier for better flow
+        root: null,
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
     };
 
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                // Unobserve once revealed to keep layout responsive
                 observer.unobserve(entry.target);
             }
         });
@@ -135,105 +176,35 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(element);
     });
 
-    // stagger child elements in grids programmatically if needed
-    // This allows us to easily stagger any elements inside grids for a premium entry animation
-    const staggerGrids = document.querySelectorAll('.projects-grid, .skills-grid, .certifications-grid, .contact-grid');
-    staggerGrids.forEach(grid => {
-        const children = grid.querySelectorAll('.reveal');
-        children.forEach((child, index) => {
-            // Apply delay based on item index (e.g. 100ms * index)
-            child.style.transitionDelay = `${index * 0.1}s`;
-        });
-    });
-
     // ==========================================================================
-    // CASE STUDY MODAL FUNCTIONALITY
+    // SHOW MORE PROJECTS TOGGLE
     // ==========================================================================
-    const openModalBtns = document.querySelectorAll('.open-case-study-btn');
-    const modal = document.getElementById('ab-test-modal');
-    
-    if (modal) {
-        const closeBtn = modal.querySelector('.modal-close-btn');
-        const backdrop = modal.querySelector('.modal-backdrop');
-        const wrapper = modal.querySelector('.modal-wrapper');
+    const toggleProjectsBtn = document.getElementById('toggle-projects-btn');
+    const hiddenProjects = document.querySelectorAll('.projects-hidden');
 
-        const openModal = () => {
-            modal.classList.add('open');
-            modal.setAttribute('aria-hidden', 'false');
-            document.body.classList.add('modal-open');
-            animateCounters(modal);
-        };
+    if (toggleProjectsBtn) {
+        toggleProjectsBtn.addEventListener('click', () => {
+            const isExpanded = toggleProjectsBtn.getAttribute('data-expanded') === 'true';
 
-        const closeModal = () => {
-            modal.classList.remove('open');
-            modal.setAttribute('aria-hidden', 'true');
-            document.body.classList.remove('modal-open');
-        };
-
-        openModalBtns.forEach(btn => {
-            btn.addEventListener('click', openModal);
-        });
-
-        if (closeBtn) closeBtn.addEventListener('click', closeModal);
-        if (backdrop) backdrop.addEventListener('click', closeModal);
-        
-        // Close modal on escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('open')) {
-                closeModal();
+            if (isExpanded) {
+                hiddenProjects.forEach(project => {
+                    project.style.display = 'none';
+                });
+                toggleProjectsBtn.setAttribute('data-expanded', 'false');
+                toggleProjectsBtn.innerHTML = `
+                    <span>Show More Projects (6 More)</span>
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                `;
+            } else {
+                hiddenProjects.forEach(project => {
+                    project.style.display = 'flex';
+                });
+                toggleProjectsBtn.setAttribute('data-expanded', 'true');
+                toggleProjectsBtn.innerHTML = `
+                    <span>Show Fewer Projects</span>
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+                `;
             }
-        });
-
-        // Close modal when clicking outside the content (on wrapper but not container)
-        if (wrapper) {
-            wrapper.addEventListener('click', (e) => {
-                if (e.target === wrapper) {
-                    closeModal();
-                }
-            });
-        }
-    }
-
-    // Animated Counters for Stats
-    function animateCounters(modalElement) {
-        const counters = modalElement.querySelectorAll('[data-val]');
-        counters.forEach(counter => {
-            const targetVal = parseFloat(counter.getAttribute('data-val'));
-            const prefix = counter.getAttribute('data-prefix') || '';
-            const suffix = counter.getAttribute('data-suffix') || '';
-            const duration = 1200; // in ms
-            const startVal = 0;
-            const startTime = performance.now();
-
-            const updateCount = (currentTime) => {
-                const elapsedTime = currentTime - startTime;
-                const progress = Math.min(elapsedTime / duration, 1);
-                
-                // Ease out quad formula
-                const easeProgress = progress * (2 - progress);
-                const currentVal = startVal + easeProgress * (targetVal - startVal);
-                
-                if (targetVal % 1 === 0) {
-                    // Integer values
-                    counter.textContent = `${prefix}${Math.floor(currentVal)}${suffix}`;
-                } else {
-                    // Floating point values
-                    counter.textContent = `${prefix}${currentVal.toFixed(2)}${suffix}`;
-                }
-
-                if (progress < 1) {
-                    requestAnimationFrame(updateCount);
-                } else {
-                    if (targetVal % 1 === 0) {
-                        counter.textContent = `${prefix}${targetVal}${suffix}`;
-                    } else {
-                        counter.textContent = `${prefix}${targetVal.toFixed(2)}${suffix}`;
-                    }
-                }
-            };
-
-            requestAnimationFrame(updateCount);
         });
     }
 });
-

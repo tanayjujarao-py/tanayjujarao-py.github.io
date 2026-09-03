@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanay Jujarao — Data Analyst Portfolio</title>
-    <meta name="description" content="Portfolio of Tanay Jujarao, an aspiring Data Analyst turning raw data into business decisions using SQL, Python, Excel, and Tableau.">
-    <meta name="keywords" content="Data Analyst, SQL, Python, Tableau, Portfolio, Tanay Jujarao, Data Science, Business Intelligence">
+    <title>Tanay Jujarao — Data Analyst / Analytics Engineer</title>
+    <meta name="description" content="Portfolio of Tanay Jujarao, Data Analyst transitioning into Analytics Engineering. Building end-to-end data pipelines, cloud warehouses, dbt transformations, and BI dashboards.">
+    <meta name="keywords" content="Analytics Engineer, Data Analyst, Snowflake, dbt, Airflow, SQL, Python, Tableau, Power BI, Data Engineering, Medallion Architecture, Tanay Jujarao">
     <meta name="author" content="Tanay Jujarao">
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Tanay Jujarao — Data Analyst Portfolio">
-    <meta property="og:description" content="Aspiring Data Analyst turning raw data into business decisions with expertise in SQL, Python, Tableau, and Excel.">
+    <meta property="og:title" content="Tanay Jujarao — Data Analyst / Analytics Engineer">
+    <meta property="og:description" content="Data Analyst & Analytics Engineer building cloud data pipelines with Snowflake, dbt Core, Apache Airflow, Python, and SQL.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
@@ -25,22 +25,16 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
-    <!-- Subtle Animated Background Blobs -->
-    <div class="blob-container">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-    </div>
 
     <!-- Sticky Navbar -->
     <header class="navbar-header" id="navbar">
         <div class="nav-container">
             <a href="#hero" class="logo">
-                Tanay <span class="logo-accent">Jujarao</span>
+                <span class="logo-prefix">~/</span>tanay<span class="logo-accent">.jujarao</span>
             </a>
             
-            <!-- Mobile Menu Toggle Button -->
-            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -48,11 +42,16 @@
             
             <nav class="nav-menu" id="nav-menu">
                 <a href="#about" class="nav-link">About</a>
-                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#tech-stack" class="nav-link">Tech Stack</a>
+                <a href="#methodologies" class="nav-link">Methodologies</a>
                 <a href="#skills" class="nav-link">Skills</a>
-                <a href="#certifications" class="nav-link">Certifications</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#education" class="nav-link">Education</a>
                 <a href="#contact" class="nav-link">Contact</a>
-                <a href="assets/resume.pdf" class="btn btn-accent btn-sm nav-resume" download>Download Resume</a>
+                <a href="assets/resume.pdf" class="btn btn-accent btn-sm nav-resume" download>
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Resume
+                </a>
             </nav>
         </div>
     </header>
@@ -60,90 +59,201 @@
     <main>
         <!-- Hero Section -->
         <section id="hero" class="hero-section">
-            <!-- Giant Watermark Background -->
-            <div class="hero-watermark">DATA</div>
-            
             <div class="container hero-container">
-                <!-- Left: Profile Image in Circle -->
+                <!-- Left: Profile Avatar -->
                 <div class="hero-avatar-container reveal">
                     <div class="hero-avatar-glow"></div>
-                    <div class="hero-avatar-ring"></div>
                     <div class="hero-avatar-frame">
                         <img src="assets/profile.jpg" alt="Tanay Jujarao" class="hero-avatar-img">
                     </div>
                 </div>
                 
-                <!-- Right: Text Content -->
-                <div class="hero-text-content">
-                    <div class="hero-badge reveal">Aspiring Data Analyst</div>
-                    <h1 class="hero-title reveal">Hi, I am Tanay.</h1>
-                    <p class="hero-tagline reveal">A <span>Data Analyst</span> turning raw data into business decisions &mdash; SQL, Python, Tableau, Power BI &amp; Excel.</p>
-                    <p class="hero-subtext reveal">Entry-level analyst with hands-on experience querying large datasets, building cohort analyses, and translating insights into revenue impact.</p>
+                <!-- Right: Hero Details -->
+                <div class="hero-text-content reveal">
+                    <div class="terminal-badge">
+                        cat position.json
+                    </div>
+                    <h1 class="hero-title">Hi, I'm <span class="hero-title-highlight">Tanay Jujarao</span></h1>
                     
-                    <div class="hero-actions reveal">
-                        <a href="#projects" class="btn btn-primary">View Projects</a>
-                        <a href="#contact" class="btn btn-secondary">Let's Talk!</a>
+                    <div class="hero-typewriter">
+                        <span id="typewriter-text">Data Analyst → Analytics Engineer</span>
+                        <span class="typewriter-cursor"></span>
                     </div>
                     
-                    <div class="hero-socials reveal">
-                        <a href="https://linkedin.com/in/tanay-jujarao" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="LinkedIn Profile">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    <p class="hero-subtext">
+                        Aspiring Data Analyst / Analytics Engineer with hands-on experience building end-to-end data pipelines and turning messy, multi-source datasets into executive-ready dashboards and actionable business insights.
+                    </p>
+                    
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                            Explore Projects
                         </a>
-                        <a href="https://github.com/tanayjujarao-py" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="GitHub Profile">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        <a href="assets/resume.pdf" class="btn btn-secondary" download>
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Download Resume
                         </a>
-                        <a href="mailto:tanayjujarao@gmail.com" class="social-icon-link" aria-label="Email Tanay">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    
+                    <div class="hero-socials">
+                        <a href="https://linkedin.com/in/tanay-jujarao" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                         </a>
+                        <a href="https://github.com/tanayjujarao-py" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                        <a href="mailto:tanayjujarao@gmail.com" class="social-icon-link" aria-label="Email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quantified Impact Strip -->
+            <div class="container" style="margin-top: 50px;">
+                <div class="impact-strip reveal">
+                    <div class="impact-card">
+                        <div class="impact-val">10M+</div>
+                        <div class="impact-lbl">Orders Processed</div>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-val">$2.1M</div>
+                        <div class="impact-lbl">Revenue Loss Identified</div>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-val">3.16x</div>
+                        <div class="impact-lbl">Projected ROI</div>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-val">67.3%</div>
+                        <div class="impact-lbl">Predictive Accuracy</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Slanted Ticker Section -->
-        <div class="ticker-section">
-            <div class="ticker-track">
-                <div class="ticker-list">
-                    <span>SQL</span><span class="ticker-bullet">&bull;</span>
-                    <span>PYTHON</span><span class="ticker-bullet">&bull;</span>
-                    <span>TABLEAU</span><span class="ticker-bullet">&bull;</span>
-                    <span>EXCEL</span><span class="ticker-bullet">&bull;</span>
-                    <span>DATA ANALYSIS</span><span class="ticker-bullet">&bull;</span>
-                    <span>COHORT ANALYSIS</span><span class="ticker-bullet">&bull;</span>
-                    <span>RFM MODELING</span><span class="ticker-bullet">&bull;</span>
-                    <span>DATA VISUALIZATION</span><span class="ticker-bullet">&bull;</span>
+        <!-- Tech Stack Icon Strip -->
+        <section id="tech-stack" class="tech-strip-section">
+            <div class="container">
+                <div class="text-center reveal" style="margin-bottom: 25px;">
+                    <h2 class="section-title" style="font-size: 1.6rem;">Technology Stack</h2>
+                    <p class="section-subtitle" style="margin-bottom: 0;">MODERN DATA ECOSYSTEM &amp; TOOLING</p>
                 </div>
-                <div class="ticker-list" aria-hidden="true">
-                    <span>SQL</span><span class="ticker-bullet">&bull;</span>
-                    <span>PYTHON</span><span class="ticker-bullet">&bull;</span>
-                    <span>TABLEAU</span><span class="ticker-bullet">&bull;</span>
-                    <span>EXCEL</span><span class="ticker-bullet">&bull;</span>
-                    <span>DATA ANALYSIS</span><span class="ticker-bullet">&bull;</span>
-                    <span>COHORT ANALYSIS</span><span class="ticker-bullet">&bull;</span>
-                    <span>RFM MODELING</span><span class="ticker-bullet">&bull;</span>
-                    <span>DATA VISUALIZATION</span><span class="ticker-bullet">&bull;</span>
+                
+                <div class="tech-grid reveal">
+                    <!-- Snowflake -->
+                    <div class="tech-item" title="Snowflake Data Cloud">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L9.5 7H14.5L12 2ZM12 22L14.5 17H9.5L12 22ZM2 12L7 9.5V14.5L2 12ZM22 12L17 14.5V9.5L22 12ZM5.6 5.6L10 8.5L8.5 10L5.6 5.6ZM18.4 18.4L14 15.5L15.5 14L18.4 18.4ZM18.4 5.6L15.5 10L14 8.5L18.4 5.6ZM5.6 18.4L8.5 14L10 15.5L5.6 18.4Z"/></svg>
+                        <span class="tech-item-name">Snowflake</span>
+                    </div>
+                    <!-- dbt -->
+                    <div class="tech-item" title="dbt Core">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7V17L12 22L22 17V7L12 2ZM12 4.2L19.2 7.8L12 11.4L4.8 7.8L12 4.2ZM4 9.2L11 12.7V19.8L4 16.3V9.2ZM13 19.8V12.7L20 9.2V16.3L13 19.8Z"/></svg>
+                        <span class="tech-item-name">dbt Core</span>
+                    </div>
+                    <!-- Airflow -->
+                    <div class="tech-item" title="Apache Airflow">
+                        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 14.5h-2v-2h2v2zm0-4h-2V7h2v5.5z"/></svg>
+                        <span class="tech-item-name">Airflow</span>
+                    </div>
+                    <!-- Amazon S3 -->
+                    <div class="tech-item" title="AWS S3 Cloud Storage">
+                        <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
+                        <span class="tech-item-name">AWS S3</span>
+                    </div>
+                    <!-- Python -->
+                    <div class="tech-item" title="Python Programming">
+                        <svg viewBox="0 0 24 24"><path d="M14.25.18c-.9 0-1.66.07-2.48.22-3.23.58-3.6 2.1-3.6 4.3v1.85h6.1V8.3H8.17c-2.5 0-4.36 1.1-4.9 3.53-.67 3.03.13 4.28 2.56 4.28h1.56v-2.12c0-2.5 2.1-4.66 4.62-4.66h6.12V7.15c0-3.05-1.95-6.97-8.78-6.97zm.05 1.58c.45 0 .82.37.82.82s-.37.83-.82.83-.82-.37-.82-.82.37-.82.82-.82zm-4.3 12.3c-.46 0-.83.37-.83.82s.37.82.83.82.82-.37.82-.82-.37-.82-.82-.82z"/></svg>
+                        <span class="tech-item-name">Python</span>
+                    </div>
+                    <!-- SQL -->
+                    <div class="tech-item" title="SQL Querying & Modeling">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 4.24 2 7v10c0 2.76 4.48 5 10 5s10-2.24 10-5V7c0-2.76-4.48-5-10-5zm0 2c4.42 0 8 1.79 8 3s-3.58 3-8 3-8-1.79-8-3 3.58-3 8-3zm0 16c-4.42 0-8-1.79-8-3v-2.52c1.86 1.3 4.75 2.02 8 2.02s6.14-.72 8-2.02V17c0 1.21-3.58 3-8 3z"/></svg>
+                        <span class="tech-item-name">SQL</span>
+                    </div>
+                    <!-- Docker -->
+                    <div class="tech-item" title="Docker Containerization">
+                        <svg viewBox="0 0 24 24"><path d="M13 8h-2v2h2V8zm-3 0H8v2h2V8zM7 8H5v2h2V8zm12 5c-.4-.1-1.3-.2-2-.1-1.2.3-2.1 1.2-2.1 2.3 0 1.5 1.4 2.8 3.5 2.8 2.4 0 3.6-1.5 3.6-2.5 0-1.8-1.7-2.3-3-2.5zM2 13v3c0 2.2 3.6 4 10 4s10-1.8 10-4v-3H2z"/></svg>
+                        <span class="tech-item-name">Docker</span>
+                    </div>
+                    <!-- Power BI -->
+                    <div class="tech-item" title="Power BI Dashboarding">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-5h2v5zm4 0h-2V7h2v10zm4 0h-2v-8h2v8z"/></svg>
+                        <span class="tech-item-name">Power BI</span>
+                    </div>
+                    <!-- Tableau -->
+                    <div class="tech-item" title="Tableau Analytics">
+                        <svg viewBox="0 0 24 24"><path d="M11 2h2v5h-2V2zm-5 5h2v4H6V7zm10 0h2v4h-2V7zM2 11h5v2H2v-2zm15 0h5v2h-5v-2zm-6 3h2v5h-2v-5z"/></svg>
+                        <span class="tech-item-name">Tableau</span>
+                    </div>
+                    <!-- Git -->
+                    <div class="tech-item" title="Git Version Control">
+                        <svg viewBox="0 0 24 24"><path d="M2.6 10.59L11.4 1.8a2.4 2.4 0 0 1 3.4 0l6.6 6.6a2.4 2.4 0 0 1 0 3.4L12.6 20.6a2.4 2.4 0 0 1-3.4 0L2.6 14a2.4 2.4 0 0 1 0-3.41z"/></svg>
+                        <span class="tech-item-name">Git</span>
+                    </div>
+                    <!-- GitHub -->
+                    <div class="tech-item" title="GitHub Repositories">
+                        <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                        <span class="tech-item-name">GitHub</span>
+                    </div>
+                    <!-- Jupyter -->
+                    <div class="tech-item" title="Jupyter Notebooks">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><circle cx="5" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>
+                        <span class="tech-item-name">Jupyter</span>
+                    </div>
+                    <!-- Pandas -->
+                    <div class="tech-item" title="Pandas Data Wrangling">
+                        <svg viewBox="0 0 24 24"><path d="M4 3h4v18H4V3zm6 0h4v18h-4V3zm6 0h4v18h-4V3z"/></svg>
+                        <span class="tech-item-name">Pandas</span>
+                    </div>
+                    <!-- NumPy -->
+                    <div class="tech-item" title="NumPy Numerical Computing">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7v10l10 5 10-5V7l-10-5zm0 2.2l7.2 3.6L12 11.4 4.8 7.8 12 4.2z"/></svg>
+                        <span class="tech-item-name">NumPy</span>
+                    </div>
+                    <!-- Scikit-Learn -->
+                    <div class="tech-item" title="Scikit-Learn Machine Learning">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                        <span class="tech-item-name">Scikit-Learn</span>
+                    </div>
+                    <!-- Excel -->
+                    <div class="tech-item" title="MS Excel Power Query & Pivot Tables">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/></svg>
+                        <span class="tech-item-name">MS Excel</span>
+                    </div>
+                    <!-- MySQL -->
+                    <div class="tech-item" title="MySQL Relational Database">
+                        <svg viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.5 2 11c0 3.5 2.8 6.5 7 7.5V21l4-3h1c5.5 0 10-3.5 10-7s-4.5-8-10-8z"/></svg>
+                        <span class="tech-item-name">MySQL</span>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- About Section -->
         <section id="about" class="about-section section-padding">
             <div class="container">
-                <h2 class="section-title reveal">About Me</h2>
+                <div class="text-center reveal">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">BACKGROUND &amp; CAREER POSITIONING</p>
+                </div>
                 
                 <div class="about-grid">
                     <!-- Bio & Identity -->
-                    <div class="about-info reveal">
-                        <p class="about-text">
-                            I'm Tanay Jujarao, an entry-level Data Analyst with hands-on experience querying and cleaning large datasets, building executive dashboards, and translating findings into recommendations stakeholders actually act on. I work primarily in SQL, Python, Tableau, Power BI, and Excel &mdash; and I care about one thing above all: <strong>turning numbers into decisions</strong>.
+                    <div class="about-text-content reveal">
+                        <div class="terminal-badge">
+                            cat about.md
+                        </div>
+                        <p>
+                            I am an <strong>Aspiring Data Analyst / Analytics Engineer</strong> with hands-on experience building end-to-end data pipelines and turning messy, multi-source datasets into executive-ready dashboards and actionable business insights.
                         </p>
-                        <p class="about-text">
-                            Currently pursuing my B.E. in Electronics & Telecommunication Engineering while building real-world analytics projects. I approach problems with analytical rigor, combining engineering logic with business intelligence to expose opportunities and solve bottlenecks.
+                        <p>
+                            My technical experience spans the full <strong>modern data stack</strong> — from cloud data lakes and warehousing (AWS S3, Snowflake) to transformation and orchestration (dbt Core, Apache Airflow) — combined with strong statistical analysis, BI dashboarding, and stakeholder communication skills developed through real-world project work.
                         </p>
                     </div>
                     
                     <!-- Context Cards (Education, Location) -->
-                    <div class="about-cards-container reveal">
+                    <div class="about-cards-container reveal" id="education">
                         <!-- Education Card -->
                         <div class="info-card">
                             <div class="info-card-header">
@@ -151,10 +261,9 @@
                                 <h3>Education</h3>
                             </div>
                             <div class="info-card-body">
-                                <p class="degree">Bachelor of Engineering in Electronics &amp; Telecommunication</p>
-                                <p class="institution">Modern Education Society's College of Engineering</p>
-                                <p class="location-detail">Pune, India</p>
-                                <p class="timeline">2023 – 2027</p>
+                                <p class="degree">Bachelor of Computer Applications (BCA)</p>
+                                <p class="institution">ITM College (Institute of Technology and Management)</p>
+                                <p class="location-detail">1st Year Student</p>
                             </div>
                         </div>
 
@@ -162,12 +271,240 @@
                         <div class="info-card">
                             <div class="info-card-header">
                                 <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                                <h3>Location</h3>
+                                <h3>Location &amp; Availability</h3>
                             </div>
                             <div class="info-card-body">
-                                <p class="location-text">Nanded, Maharashtra, India</p>
-                                <p class="availability">Open to remote roles and on-site opportunities / internships globally.</p>
+                                <p class="degree" style="font-size: 0.9rem; color: var(--text-primary);">Nanded, Maharashtra, India</p>
+                                <p class="timeline">Open to remote roles and on-site opportunities / internships globally.</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodologies Section (NEW) -->
+        <section id="methodologies" class="section-padding" style="background: rgba(15, 23, 42, 0.4); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+            <div class="container">
+                <div class="text-center reveal">
+                    <h2 class="section-title">Engineering &amp; Analytics Methodologies</h2>
+                    <p class="section-subtitle">ARCHITECTURE &amp; DATA INFRASTRUCTURE PATTERNS</p>
+                </div>
+                
+                <div class="methodologies-grid reveal">
+                    <!-- Medallion -->
+                    <div class="methodology-card">
+                        <div class="methodology-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                        </div>
+                        <h3 class="methodology-title">Medallion Architecture</h3>
+                        <p class="methodology-desc">Structuring raw ingestion (Bronze), cleansed transformations (Silver), and aggregated BI marts (Gold).</p>
+                    </div>
+                    
+                    <!-- ELT vs ETL -->
+                    <div class="methodology-card">
+                        <div class="methodology-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                        </div>
+                        <h3 class="methodology-title">ELT Pipeline Design</h3>
+                        <p class="methodology-desc">Loading raw data directly into cloud data warehouses before performing SQL/dbt transformations at scale.</p>
+                    </div>
+                    
+                    <!-- Incremental Processing -->
+                    <div class="methodology-card">
+                        <div class="methodology-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                        </div>
+                        <h3 class="methodology-title">Incremental MERGE Strategies</h3>
+                        <p class="methodology-desc">Optimizing compute costs by processing only new or modified records using dbt incremental models.</p>
+                    </div>
+                    
+                    <!-- SCD Type 2 -->
+                    <div class="methodology-card">
+                        <div class="methodology-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <h3 class="methodology-title">Slowly Changing Dimensions (SCD2)</h3>
+                        <p class="methodology-desc">Preserving full historical dimension changes over time using dbt snapshots and timestamp tracking.</p>
+                    </div>
+                    
+                    <!-- Star Schema -->
+                    <div class="methodology-card">
+                        <div class="methodology-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <h3 class="methodology-title">Kimball Dimensional Modeling</h3>
+                        <p class="methodology-desc">Designing denormalized Fact and Dimension star schemas optimized for high-speed BI reporting.</p>
+                    </div>
+                    
+                    <!-- Data Quality -->
+                    <div class="methodology-card">
+                        <div class="methodology-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 11 13 15 9"/></svg>
+                        </div>
+                        <h3 class="methodology-title">Test-Driven Data Quality</h3>
+                        <p class="methodology-desc">Preventing pipeline silent failures using dbt singular and generic tests (unique, not_null, accepted_values).</p>
+                    </div>
+                    
+                    <!-- Statistical Testing -->
+                    <div class="methodology-card">
+                        <div class="methodology-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                        </div>
+                        <h3 class="methodology-title">Statistical Experimentation</h3>
+                        <p class="methodology-desc">Applying hypothesis testing (Z-tests, Welch's t-tests, Chi-square) to validate product &amp; business metrics.</p>
+                    </div>
+                    
+                    <!-- Lineage -->
+                    <div class="methodology-card">
+                        <div class="methodology-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        </div>
+                        <h3 class="methodology-title">Data Lineage &amp; Governance</h3>
+                        <p class="methodology-desc">Documenting column-level lineage, DAG dependencies, and schema contracts for enterprise visibility.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section section-padding">
+            <div class="container">
+                <div class="text-center reveal">
+                    <h2 class="section-title">Skills &amp; Technical Capabilities</h2>
+                    <p class="section-subtitle">8 CATEGORIZED CORE COMPETENCIES</p>
+                </div>
+                
+                <div class="skills-category-grid reveal">
+                    <!-- Category 1: Data Engineering -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                            <h3 class="category-title">Data Engineering &amp; Modern Data Stack</h3>
+                        </div>
+                        <div class="tags-container">
+                            <span class="tag">Snowflake</span>
+                            <span class="tag">dbt Core</span>
+                            <span class="tag">Apache Airflow</span>
+                            <span class="tag">Amazon S3</span>
+                            <span class="tag">Medallion Architecture</span>
+                            <span class="tag">ELT Pipeline Design</span>
+                            <span class="tag">Data Lineage</span>
+                            <span class="tag">Incremental Modeling</span>
+                            <span class="tag">SCD Type 2 (Snapshots)</span>
+                            <span class="tag">Data Quality Testing</span>
+                            <span class="tag">Docker</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 2: Languages & Databases -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                            <h3 class="category-title">Languages &amp; Databases</h3>
+                        </div>
+                        <div class="tags-container">
+                            <span class="tag">Python</span>
+                            <span class="tag">SQL (CTEs, Window Functions, Joins)</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">Jinja (Templating)</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 3: Python Libraries -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                            <h3 class="category-title">Python Libraries</h3>
+                        </div>
+                        <div class="tags-container">
+                            <span class="tag">Pandas</span>
+                            <span class="tag">NumPy</span>
+                            <span class="tag">Matplotlib</span>
+                            <span class="tag">Scikit-Learn</span>
+                            <span class="tag">SciPy</span>
+                            <span class="tag">Statsmodels</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 4: Machine Learning -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                            <h3 class="category-title">Machine Learning</h3>
+                        </div>
+                        <div class="tags-container">
+                            <span class="tag">Decision Trees</span>
+                            <span class="tag">Random Forest</span>
+                            <span class="tag">XGBoost</span>
+                            <span class="tag">Model Evaluation</span>
+                            <span class="tag">Cross-Validation</span>
+                            <span class="tag">Hyperparameter Tuning</span>
+                            <span class="tag">One-Hot Encoding</span>
+                            <span class="tag">Data Leakage Prevention</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 5: Analytics & Statistics -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                            <h3 class="category-title">Analytics &amp; Statistics</h3>
+                        </div>
+                        <div class="tags-container">
+                            <span class="tag">A/B Testing</span>
+                            <span class="tag">Hypothesis Testing</span>
+                            <span class="tag">Two-Proportion Z-Test</span>
+                            <span class="tag">Welch's t-Test</span>
+                            <span class="tag">Chi-Square Test</span>
+                            <span class="tag">Confidence Intervals</span>
+                            <span class="tag">Cohort Analysis</span>
+                            <span class="tag">RFM Modeling</span>
+                            <span class="tag">Churn Analysis</span>
+                            <span class="tag">ROI Modeling</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 6: BI & Visualization -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                            <h3 class="category-title">BI &amp; Visualization</h3>
+                        </div>
+                        <div class="tags-container">
+                            <span class="tag">Tableau (LOD Expressions, Calculated Fields)</span>
+                            <span class="tag">Power BI (DAX, Power Query, Star Schema)</span>
+                            <span class="tag">MS Excel (Pivot Tables, Power Query)</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 7: Tools & Platforms -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+                            <h3 class="category-title">Tools &amp; Platforms</h3>
+                        </div>
+                        <div class="tags-container">
+                            <span class="tag">Git</span>
+                            <span class="tag">GitHub</span>
+                            <span class="tag">Jupyter Notebook</span>
+                            <span class="tag">VS Code</span>
+                            <span class="tag">AWS IAM</span>
+                            <span class="tag">Snowflake Storage Integration</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 8: Soft Skills -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            <h3 class="category-title">Soft Skills</h3>
+                        </div>
+                        <div class="tags-container">
+                            <span class="tag">Stakeholder Management</span>
+                            <span class="tag">Business Insights Presentation</span>
+                            <span class="tag">Technical Documentation</span>
+                            <span class="tag">Data Storytelling</span>
                         </div>
                     </div>
                 </div>
@@ -178,229 +515,257 @@
         <section id="projects" class="projects-section section-padding">
             <div class="container">
                 <div class="text-center reveal">
-                    <h2 class="section-title">My Recent Works</h2>
-                    <p class="section-subtitle">RECENT PROJECTS</p>
+                    <h2 class="section-title">Projects Showcase</h2>
+                    <p class="section-subtitle">ANALYTICS ENGINEERING &amp; DATA ANALYSIS PROJECTS</p>
                 </div>
                 
-                <!-- FEATURED PROJECT (AIRBNB DATA PIPELINE) -->
-                <div class="featured-project-container reveal">
-                    <div class="featured-project-card">
-                        <!-- Project Cover Image -->
-                        <div class="project-image-container featured-screenshot">
-                            <img src="assets/airbnb-data-pipeline.png" alt="Airbnb Data Engineering Pipeline Cover" class="project-image">
+                <div class="projects-grid reveal">
+                    <!-- Project 1: Zomato Batch Data Pipeline (Featured) -->
+                    <div class="project-card">
+                        <div class="project-image-container">
+                            <img src="assets/airbnb-data-pipeline.png" alt="Zomato Batch Data Pipeline" class="project-image">
                         </div>
-                        
-                        <!-- Project Details -->
-                        <div class="featured-project-details">
-                            <div class="project-header">
-                                <span class="featured-label" style="background: rgba(168, 85, 247, 0.08); border: 1px solid rgba(168, 85, 247, 0.2); color: var(--accent);">Featured Pipeline</span>
-                                <h3 class="project-title">Airbnb Data Engineering Pipeline</h3>
+                        <div class="project-card-details">
+                            <h3 class="project-title">Zomato Batch Data Pipeline</h3>
+                            <div class="project-tags">
+                                <span class="tag">AWS S3</span>
+                                <span class="tag">Snowflake</span>
+                                <span class="tag">dbt Core</span>
+                                <span class="tag">Apache Airflow</span>
+                                <span class="tag">Python</span>
                             </div>
                             
+                            <div class="architecture-flow">
+                                <span class="flow-node">S3 Source</span>
+                                <span class="flow-arrow">&rarr;</span>
+                                <span class="flow-node">Snowflake</span>
+                                <span class="flow-arrow">&rarr;</span>
+                                <span class="flow-node">dbt Core</span>
+                                <span class="flow-arrow">&rarr;</span>
+                                <span class="flow-node">Airflow DAG</span>
+                            </div>
+                            
+                            <p class="project-description">
+                                End-to-end Medallion batch pipeline processing 10M+ orders, ~23M order items, and 300K reviews. Features daily orchestrated Airflow DAGs, incremental MERGE models, and keyless S3-Snowflake storage integration.
+                            </p>
+                            
+                            <div class="project-outcome-box">
+                                <span class="outcome-lbl">Quantified Impact</span>
+                                <span class="outcome-val">10M+ Orders Processed &bull; Daily Automated DAG</span>
+                            </div>
+                            
+                            <div class="project-card-footer">
+                                <a href="https://github.com/tanayjujarao-py/zomato-data-engineering-pipeline" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                    View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Airbnb Data Engineering Pipeline (Featured) -->
+                    <div class="project-card">
+                        <div class="project-image-container">
+                            <img src="assets/airbnb-data-pipeline.png" alt="Airbnb Data Engineering Pipeline" class="project-image">
+                        </div>
+                        <div class="project-card-details">
+                            <h3 class="project-title">Airbnb Data Engineering Pipeline</h3>
                             <div class="project-tags">
-                                <span class="tag">Python</span>
+                                <span class="tag">AWS S3</span>
+                                <span class="tag">Snowflake</span>
+                                <span class="tag">dbt Core</span>
+                                <span class="tag">Jinja</span>
                                 <span class="tag">SQL</span>
+                            </div>
+                            
+                            <div class="architecture-flow">
+                                <span class="flow-node">S3 Bucket</span>
+                                <span class="flow-arrow">&rarr;</span>
+                                <span class="flow-node">Snowflake DW</span>
+                                <span class="flow-arrow">&rarr;</span>
+                                <span class="flow-node">dbt Transformations</span>
+                            </div>
+                            
+                            <p class="project-description">
+                                Production cloud ELT data pipeline ingesting Airbnb data into Snowflake and transforming it through Bronze/Silver/Gold layers using dbt Core — featuring incremental models, SCD Type 2 snapshots, and custom macros.
+                            </p>
+                            
+                            <div class="project-outcome-box">
+                                <span class="outcome-lbl">Quantified Impact</span>
+                                <span class="outcome-val">SCD Type 2 Snapshots &bull; 100% Test Pass Rate</span>
+                            </div>
+                            
+                            <div class="project-card-footer">
+                                <a href="https://github.com/tanayjujarao-py/airbnb-data-engineering" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                    View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Retail Analytics — ELT Pipeline Project (Featured) -->
+                    <div class="project-card">
+                        <div class="project-image-container">
+                            <img src="assets/sales-performance.png" alt="Retail Analytics ELT Pipeline" class="project-image">
+                        </div>
+                        <div class="project-card-details">
+                            <h3 class="project-title">Retail Analytics — ELT Pipeline Project</h3>
+                            <div class="project-tags">
                                 <span class="tag">dbt Core</span>
                                 <span class="tag">Snowflake</span>
                                 <span class="tag">AWS S3</span>
                                 <span class="tag">Jinja</span>
+                                <span class="tag">Data Quality</span>
+                            </div>
+                            
+                            <div class="architecture-flow">
+                                <span class="flow-node">Bronze (Raw)</span>
+                                <span class="flow-arrow">&rarr;</span>
+                                <span class="flow-node">Silver (Clean)</span>
+                                <span class="flow-arrow">&rarr;</span>
+                                <span class="flow-node">Gold (Marts)</span>
                             </div>
                             
                             <p class="project-description">
-                                An end-to-end data pipeline that ingests Airbnb data from AWS S3 into Snowflake and transforms it through a Bronze/Silver/Gold architecture using dbt Core — featuring incremental models, SCD Type 2 snapshots, and data quality tests.
+                                Production-style dbt + Snowflake data pipeline. Implements Medallion architecture (Bronze/Silver/Gold), SCD2 snapshots, reusable Jinja macros, and automated test-driven data quality assertions.
                             </p>
                             
-                            <!-- Key Metrics Grid -->
-                            <div class="stat-grid">
-                                <div class="stat-box">
-                                    <div class="stat-icon-container">
-                                        <!-- Layers Icon -->
-                                        <svg class="stat-box-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-                                    </div>
-                                    <div class="stat-number">3-Tier</div>
-                                    <div class="stat-label">Bronze &rarr; Silver &rarr; Gold</div>
-                                </div>
-                                <div class="stat-box">
-                                    <div class="stat-icon-container">
-                                        <!-- Ingestion Icon -->
-                                        <svg class="stat-box-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 16.9A5 5 0 0 0 18 7h-1.26a8 8 0 1 0-11.62 8.58"/><polyline points="13 11 9 17 12 17 9 23"/></svg>
-                                    </div>
-                                    <div class="stat-number">ELT Ingestion</div>
-                                    <div class="stat-label">AWS S3 &rarr; Snowflake</div>
-                                </div>
-                                <div class="stat-box">
-                                    <div class="stat-icon-container">
-                                        <!-- History Icon -->
-                                        <svg class="stat-box-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><polyline points="3 3 3 8 8 8"/><line x1="12" y1="7" x2="12" y2="12"/><line x1="12" y1="12" x2="16" y2="14"/></svg>
-                                    </div>
-                                    <div class="stat-number">SCD Type 2</div>
-                                    <div class="stat-label">Historical Snapshots</div>
-                                </div>
-                                <div class="stat-box">
-                                    <div class="stat-icon-container">
-                                        <!-- Shield Check Icon -->
-                                        <svg class="stat-box-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 11 13 15 9"/></svg>
-                                    </div>
-                                    <div class="stat-number">100% Passed</div>
-                                    <div class="stat-label">dbt Assertions & Tests</div>
-                                </div>
+                            <div class="project-outcome-box">
+                                <span class="outcome-lbl">Quantified Impact</span>
+                                <span class="outcome-val">Medallion Standard &bull; Reusable Jinja Templates</span>
                             </div>
                             
-                            <div class="project-footer">
-                                <a href="https://github.com/tanayjujarao-py/airbnb-data-engineering" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                            <div class="project-card-footer">
+                                <a href="https://github.com/tanayjujarao-py/retail-analytics-elt-pipeline" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
                                     <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                                    View GitHub Repository
+                                    View on GitHub
                                 </a>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- FEATURED PROJECT (A/B TESTING) -->
-                <div class="featured-project-container reveal">
-                    <div class="featured-project-card">
-                        <!-- Project Cover Image -->
-                        <div class="project-image-container featured-screenshot">
-                            <img src="assets/ab-test-experiment.png" alt="A/B Testing Analysis: Website Background Color Experiment Cover" class="project-image">
+                    <!-- Project 4: A/B Testing Analysis (Featured) -->
+                    <div class="project-card">
+                        <div class="project-image-container">
+                            <img src="assets/ab-test-experiment.png" alt="A/B Testing Analysis" class="project-image">
                         </div>
-                        
-                        <!-- Project Details -->
-                        <div class="featured-project-details">
-                            <div class="project-header">
-                                <span class="featured-label" style="background: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.2); color: var(--accent-blue);">Featured Analysis</span>
-                                <h3 class="project-title">A/B Testing Analysis: Website Background Color Experiment</h3>
-                            </div>
-                            
+                        <div class="project-card-details">
+                            <h3 class="project-title">A/B Testing Analysis: Website Background Experiment</h3>
                             <div class="project-tags">
                                 <span class="tag">Python</span>
-                                <span class="tag">Pandas</span>
-                                <span class="tag">NumPy</span>
                                 <span class="tag">SciPy</span>
                                 <span class="tag">Statsmodels</span>
-                                <span class="tag">Matplotlib</span>
-                                <span class="tag">Jupyter Notebook</span>
-                                <span class="tag">Git</span>
-                                <span class="tag">GitHub</span>
+                                <span class="tag">Z-Test</span>
+                                <span class="tag">Welch's t-Test</span>
                             </div>
                             
                             <p class="project-description">
-                                Conducted an end-to-end A/B testing analysis to evaluate whether changing a website's background color improved conversion rates. Applied statistical hypothesis testing and business analysis to recommend whether the new design should be deployed.
+                                Evaluated website background color experiment on ~5,000 user sessions. Applied Two-Proportion Z-Test, Welch's t-tests, and Chi-Square validation to recommend deployment.
                             </p>
                             
-                            <!-- Key Metrics Grid -->
-                            <div class="stat-grid">
-                                <div class="stat-box">
-                                    <div class="stat-icon-container">
-                                        <!-- Trend Up Icon -->
-                                        <svg class="stat-box-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-                                    </div>
-                                    <div class="stat-number">5.40% → 14.07%</div>
-                                    <div class="stat-label">Conversion Rate</div>
-                                </div>
-                                <div class="stat-box">
-                                    <div class="stat-icon-container">
-                                        <!-- Target Icon -->
-                                        <svg class="stat-box-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-                                    </div>
-                                    <div class="stat-number">p &lt; 0.001</div>
-                                    <div class="stat-label">Statistical Significance</div>
-                                </div>
-                                <div class="stat-box">
-                                    <div class="stat-icon-container">
-                                        <!-- Clipboard Checklist Icon -->
-                                        <svg class="stat-box-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><polyline points="9 11 12 14 15 10"/></svg>
-                                    </div>
-                                    <div class="stat-number">5 Tests</div>
-                                    <div class="stat-label">Statistical Tests</div>
-                                </div>
-                                <div class="stat-box">
-                                    <div class="stat-icon-container">
-                                        <!-- Check Circle Icon -->
-                                        <svg class="stat-box-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    </div>
-                                    <div class="stat-number">Deploy</div>
-                                    <div class="stat-label">Recommendation</div>
-                                </div>
+                            <div class="project-outcome-box">
+                                <span class="outcome-lbl">Quantified Impact</span>
+                                <span class="outcome-val">5.40% &rarr; 14.07% Conversion Lift &bull; p &lt; 0.001</span>
                             </div>
                             
-                            <div class="project-footer">
-                                <a href="https://github.com/tanayjujarao-py/ab-testing-website-experiment" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                            <div class="project-card-footer">
+                                <a href="https://github.com/tanayjujarao-py/ab-testing-website-experiment" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
                                     <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                                    View GitHub Repository
+                                    View on GitHub
                                 </a>
-                                <button class="btn btn-primary btn-sm open-case-study-btn" data-modal="ab-test-modal">
-                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                                    View Case Study
-                                </button>
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- FEATURED PROJECT 2 (IPL PREDICTION) -->
-                <div class="featured-project-container reveal">
-                    <div class="featured-project-card">
-                        <!-- Project Cover Image -->
-                        <div class="project-image-container featured-screenshot">
-                            <img src="assets/ipl-crunch.png" alt="IPL Crunch '26 - IPL Data Analytics Challenge Cover" class="project-image">
+
+                    <!-- Project 5: Classic Model Cars Dashboard (Hidden by default) -->
+                    <div class="project-card projects-hidden">
+                        <div class="project-image-container">
+                            <img src="assets/sales-performance.png" alt="Classic Model Cars Dashboard" class="project-image">
                         </div>
-                        
-                        <!-- Project Details -->
-                        <div class="featured-project-details">
-                            <div class="project-header">
-                                <span class="featured-label">Featured Analysis</span>
-                                <h3 class="project-title">What Actually Wins IPL Matches? A Ball-by-Ball Analysis</h3>
-                            </div>
-                            
+                        <div class="project-card-details">
+                            <h3 class="project-title">Classic Model Cars — Sales Performance Dashboard</h3>
                             <div class="project-tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">Pandas</span>
-                                <span class="tag">NumPy</span>
-                                <span class="tag">Matplotlib</span>
-                                <span class="tag">SQL</span>
-                                <span class="tag">Excel</span>
-                                <span class="tag">Tableau</span>
-                                <span class="tag">Jupyter</span>
-                            </div>
-                            
-                            <div class="headline-insight">
-                                <span>Headline Insight:</span>
-                                <p>"Matches are decided quietly in the first 15 overs, not in the dramatic finish."</p>
+                                <span class="tag">Power BI</span>
+                                <span class="tag">DAX</span>
+                                <span class="tag">Star Schema</span>
+                                <span class="tag">Power Query</span>
                             </div>
                             
                             <p class="project-description">
-                                Analyzed ~500K+ ball-by-ball IPL deliveries across multiple seasons, segmenting every delivery into Powerplay, Middle, and Death phases to find what statistically predicts winning.
+                                Enterprise sales analytics dashboard built on a Kimball star schema. Modeled multi-table relationships and advanced DAX measures to surface profit margins and regional velocity.
                             </p>
                             
-                            <!-- Key Findings List (Deloitte style) -->
-                            <ul class="project-features-list">
-                                <li>
-                                    <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                                    <span>Toss winners win just 50.15% of matches — essentially a coin flip</span>
-                                </li>
-                                <li>
-                                    <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                                    <span>Powerplay dominance &rarr; 67.3% win rate (batting first) / 70.8% (chasing) — vs Death Overs at just 53.2% / 50.0%</span>
-                                </li>
-                                <li>
-                                    <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                                    <span>Winning teams preserve wickets early: 1.61 wickets lost chasing vs 2.46 for losers</span>
-                                </li>
-                                <li>
-                                    <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                                    <span>Defending 180+: economy matters most (74.6% win rate). Below 180: wickets matter most (48.7% vs 23.5%)</span>
-                                </li>
-                                <li>
-                                    <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                                    <span>After 3 dot balls, another dot ball is most likely (43.7%), not a wicket as fans assume</span>
-                                </li>
-                            </ul>
-                            
-                            <div class="methodology-note">
-                                <strong>Methodology Note:</strong> Ball-by-ball IPL data, multiple seasons, Python/SQL/Excel/Tableau, phase segmentation + correlation analysis + pressure sequence analysis.
+                            <div class="project-outcome-box">
+                                <span class="outcome-lbl">Quantified Impact</span>
+                                <span class="outcome-val">$9.6M Sales Analyzed &bull; 39.8% Profit Margin Surfaced</span>
                             </div>
                             
-                            <div class="project-footer">
+                            <div class="project-card-footer">
+                                <a href="https://github.com/tanayjujarao-py/classic-model-cars-sales-dashboard" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                    View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: Customer Churn Mitigation (Hidden by default) -->
+                    <div class="project-card projects-hidden">
+                        <div class="project-image-container">
+                            <img src="assets/customer-churn.png" alt="Customer Churn Mitigation" class="project-image">
+                        </div>
+                        <div class="project-card-details">
+                            <h3 class="project-title">Strategic Customer Churn Mitigation &amp; ROI Modeling</h3>
+                            <div class="project-tags">
+                                <span class="tag">SQL</span>
+                                <span class="tag">Tableau</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">ROI Modeling</span>
+                            </div>
+                            
+                            <p class="project-description">
+                                Cohort analysis across 8K customers &amp; 34K orders. Identified a "Support Death Spiral" where 33% of users drove 67% ($2.1M) of revenue loss, proposing a $270K intervention.
+                            </p>
+                            
+                            <div class="project-outcome-box">
+                                <span class="outcome-lbl">Quantified Impact</span>
+                                <span class="outcome-val">$2.1M Revenue Loss Identified &bull; 3.16x Projected ROI</span>
+                            </div>
+                            
+                            <div class="project-card-footer">
+                                <a href="https://github.com/tanayjujarao-py/Customer-Churn-ROI-Analysis" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                    View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 7: IPL Crunch '26 (Hidden by default) -->
+                    <div class="project-card projects-hidden">
+                        <div class="project-image-container">
+                            <img src="assets/ipl-crunch.png" alt="IPL Cricket Data Analysis" class="project-image">
+                        </div>
+                        <div class="project-card-details">
+                            <h3 class="project-title">IPL Crunch '26 — Ball-by-Ball Cricket Data Analysis</h3>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Pandas</span>
+                                <span class="tag">SQL</span>
+                                <span class="tag">Tableau</span>
+                            </div>
+                            
+                            <p class="project-description">
+                                Analyzed 500K+ ball-by-ball IPL deliveries across multiple seasons, segmenting matches into Powerplay, Middle, and Death overs to find statistical win predictors.
+                            </p>
+                            
+                            <div class="project-outcome-box">
+                                <span class="outcome-lbl">Quantified Impact</span>
+                                <span class="outcome-val">67.3% Powerplay Win Rate &bull; 7x Predictive Gap</span>
+                            </div>
+                            
+                            <div class="project-card-footer">
                                 <a href="https://github.com/tanayjujarao-py/IPL-Crunch-26" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
                                     <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                                     View on GitHub
@@ -408,79 +773,96 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- OTHER PROJECTS GRID -->
-                <div class="projects-grid">
-                    <!-- Project Card A -->
-                    <div class="project-card reveal">
-                        <!-- Project Cover Image -->
-                        <div class="project-image-container standard-screenshot">
-                            <img src="assets/customer-churn.png" alt="Strategic Customer Churn Analysis & ROI Dashboard" class="project-image">
-                        </div>
-                        <div class="project-card-details">
-                            <h3 class="project-title">Strategic Customer Churn Mitigation & ROI Modeling</h3>
-                            <div class="project-tags">
-                                <span class="tag">SQL</span>
-                                <span class="tag">Python</span>
-                                <span class="tag">Tableau</span>
-                                <span class="tag">MS Excel</span>
-                            </div>
-                            <p class="project-description">
-                                Queried, cleaned, and analyzed data across 8K customers and 34K orders using SQL; cohort analysis uncovered that 33% of users drove 67% ($2.1M) of revenue loss — a pattern invisible before structured analysis. Built an interactive Tableau dashboard and proposed a $270K intervention.
-                            </p>
-                            <div class="card-stats">
-                                <div class="card-stat">
-                                    <span class="card-stat-val">3.16x</span>
-                                    <span class="card-stat-lbl">Projected ROI</span>
-                                </div>
-                                <div class="card-stat">
-                                    <span class="card-stat-val">$853K</span>
-                                    <span class="card-stat-lbl">Revenue Recovery</span>
-                                </div>
-                            </div>
-                            <div class="project-card-footer">
-                                <a href="https://github.com/tanayjujarao-py/Customer-Churn-ROI-Analysis" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
-                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                                    View on GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Project Card B -->
-                    <div class="project-card reveal">
-                        <!-- Project Cover Image -->
-                        <div class="project-image-container standard-screenshot">
-                            <img src="assets/sales-performance.png" alt="Sales Performance Analytics Dashboard" class="project-image">
+                    <!-- Project 8: Sales Performance Dashboard (Hidden by default) -->
+                    <div class="project-card projects-hidden">
+                        <div class="project-image-container">
+                            <img src="assets/sales-performance.png" alt="Sales Performance Dashboard" class="project-image">
                         </div>
                         <div class="project-card-details">
-                            <h3 class="project-title">Sales Performance Analytics & Executive Dashboard</h3>
+                            <h3 class="project-title">Sales Performance Analytics &amp; Executive Dashboard</h3>
                             <div class="project-tags">
-                                <span class="tag">SQL</span>
-                                <span class="tag">MS Excel</span>
                                 <span class="tag">Tableau</span>
+                                <span class="tag">SQL</span>
                                 <span class="tag">Power BI</span>
+                                <span class="tag">MS Excel</span>
                             </div>
+                            
                             <p class="project-description">
-                                Integrated 4 siloed data sources via SQL joins; built and maintained a 12-KPI Excel, Tableau, and Power BI dashboard for leadership. Performed distribution and correlation analysis to identify seasonal demand trends.
+                                Integrated 4 siloed data sources via SQL joins into a 12-KPI dashboard for executive leadership, performing distribution and correlation analysis to flag seasonal trends.
                             </p>
-                            <div class="card-stats">
-                                <div class="card-stat">
-                                    <span class="card-stat-val">3 Wks</span>
-                                    <span class="card-stat-lbl">Earlier Flagging</span>
-                                </div>
-                                <div class="card-stat">
-                                    <span class="card-stat-val">-40%</span>
-                                    <span class="card-stat-lbl">Ad-hoc Requests</span>
-                                </div>
-                                <div class="card-stat">
-                                    <span class="card-stat-val">-22%</span>
-                                    <span class="card-stat-lbl">Stockout Rate</span>
-                                </div>
+                            
+                            <div class="project-outcome-box">
+                                <span class="outcome-lbl">Quantified Impact</span>
+                                <span class="outcome-val">-40% Ad-hoc Requests &bull; 3 Wks Earlier Flagging</span>
                             </div>
+                            
                             <div class="project-card-footer">
-                                <a href="https://github.com/tanayjujarao-py/sales-performance-analysis-2015-2018" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                                <a href="https://github.com/tanayjujarao-py/sales-performance-analysis-2015-2018" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                    View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 9: Customer Behavior RFM (Hidden by default) -->
+                    <div class="project-card projects-hidden">
+                        <div class="project-image-container">
+                            <img src="assets/customer-churn.png" alt="Customer Behavior Retention Analysis" class="project-image">
+                        </div>
+                        <div class="project-card-details">
+                            <h3 class="project-title">Customer Behavior &amp; Retention Analysis</h3>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Pandas</span>
+                                <span class="tag">RFM Modeling</span>
+                                <span class="tag">Cohort Analysis</span>
+                            </div>
+                            
+                            <p class="project-description">
+                                Implemented RFM customer segmentation to pinpoint high-value risk cohorts and design targeted re-engagement strategies for subscription platforms.
+                            </p>
+                            
+                            <div class="project-outcome-box">
+                                <span class="outcome-lbl">Quantified Impact</span>
+                                <span class="outcome-val">+15% 90-Day Retention &bull; RFM Segmentation</span>
+                            </div>
+                            
+                            <div class="project-card-footer">
+                                <a href="https://github.com/tanayjujarao-py/customer-behavior-retention-analysis" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                    View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 10: Advanced SQL Scripts (Hidden by default) -->
+                    <div class="project-card projects-hidden">
+                        <div class="project-image-container">
+                            <img src="assets/sales-performance.png" alt="Advanced SQL Scripts" class="project-image">
+                        </div>
+                        <div class="project-card-details">
+                            <h3 class="project-title">Business Intelligence with Advanced SQL</h3>
+                            <div class="project-tags">
+                                <span class="tag">SQL</span>
+                                <span class="tag">CTEs</span>
+                                <span class="tag">Window Functions</span>
+                                <span class="tag">MySQL</span>
+                            </div>
+                            
+                            <p class="project-description">
+                                Suite of 25+ production-ready analytical SQL scripts optimizing complex multi-table queries, cohort calculations, and rolling aggregations.
+                            </p>
+                            
+                            <div class="project-outcome-box">
+                                <span class="outcome-lbl">Quantified Impact</span>
+                                <span class="outcome-val">3 Days &rarr; &lt;1 Hr Time-to-Insight &bull; 25+ Scripts</span>
+                            </div>
+                            
+                            <div class="project-card-footer">
+                                <a href="https://github.com/tanayjujarao-py/advanced-sql-analytical-scripts" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
                                     <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                                     View on GitHub
                                 </a>
@@ -488,657 +870,61 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="skills-section section-padding">
-            <div class="container">
-                <div class="text-center reveal">
-                    <h2 class="section-title">Skills &amp; Expertise</h2>
-                    <p class="section-subtitle">MY TECHNICAL TOOLBELT &amp; ANALYTICS METHODOLOGIES</p>
-                </div>
-                
-                <!-- Section 1: Core Tech Stack (Visual Cards with Logos) -->
-                <h3 class="skills-group-title reveal">Core Technologies</h3>
-                <div class="tech-stack-grid reveal">
-                    <!-- SQL -->
-                    <div class="tech-card">
-                        <div class="tech-icon-wrapper">
-                            <!-- SQL / Database SVG -->
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="tech-icon"><path d="M12 22c5.523 0 10-2.239 10-5V7c0-2.761-4.477-5-10-5S2 4.239 2 7v10c0 2.761 4.477 5 10 5z"/><path d="M22 7c0 2.761-4.477 5-10 5S2 9.761 2 7"/><path d="M22 12c0 2.761-4.477 5-10 5S2 14.761 2 12"/></svg>
-                        </div>
-                        <h4 class="tech-name">SQL</h4>
-                        <p class="tech-desc">CTEs, Window Functions, Joins, Query Optimization</p>
-                    </div>
-
-                    <!-- Python -->
-                    <div class="tech-card">
-                        <div class="tech-icon-wrapper">
-                            <!-- Python SVG -->
-                            <svg viewBox="0 0 24 24" fill="currentColor" class="tech-icon"><path d="M14.25.18c-.9 0-1.66.07-2.48.22-3.23.58-3.6 2.1-3.6 4.3v1.85h6.1V8.3H8.17c-2.5 0-4.36 1.1-4.9 3.53-.67 3.03.13 4.28 2.56 4.28h1.56v-2.12c0-2.5 2.1-4.66 4.62-4.66h6.12V7.15c0-3.05-1.95-6.97-8.78-6.97zm.05 1.58c.45 0 .82.37.82.82s-.37.83-.82.83-.82-.37-.82-.82.37-.82.82-.82zm-4.3 12.3c-.46 0-.83.37-.83.82s.37.82.83.82.82-.37.82-.82-.37-.82-.82-.82z"/><path d="M9.75 23.82c.9 0 1.66-.07 2.48-.22 3.23-.58 3.6-2.1 3.6-4.3v-1.85H9.73v-1.75h6.1c2.5 0 4.36-1.1 4.9-3.53.67-3.03-.13-4.28-2.56-4.28h-1.56v2.12c0 2.5-2.1 4.66-4.62 4.66H6.02v2.18c0 3.05 1.95 6.97 8.78 6.97zm-.05-1.58c-.45 0-.82-.37-.82-.82s.37-.83.82-.83.82.37.82.82-.37.82-.82.82zm4.3-12.3c.46 0 .83-.37.83-.82s-.37-.82-.83-.82-.82.37-.82.82.37.82.82.82z"/></svg>
-                        </div>
-                        <h4 class="tech-name">Python</h4>
-                        <p class="tech-desc">Pandas, NumPy, Matplotlib, Exploratory Data Analysis</p>
-                    </div>
-
-                    <!-- Tableau -->
-                    <div class="tech-card">
-                        <div class="tech-icon-wrapper">
-                            <!-- Tableau SVG from Simple Icons -->
-                            <svg role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="tech-icon"><path d="M11.654.174V2.377H9.682v.58h1.972V5.16h.696V2.957h1.97v-.58h-1.97V.174h-.348zm6.03 2.262l-.002 1.623v1.623h-2.957v.927h2.957v3.188H18.725l.011-1.582.02-1.576 1.465-.02 1.46-.01v-.927H18.728V2.436h-.522zm-12.407.06V5.686H2.291v.925H5.277V9.801h.985V6.61h3.013v-.925H6.262V2.496H5.77zm6.086 5.27v3.593H8.06v1.188h3.304v3.596h1.28v-3.596H15.953v-1.188H12.643V7.766h-.637zm9.721 1.55v2.221h-2.012v.811h2.012v2.261h.887v-2.261H24v-.811h-2.029V9.317h-.422zm-19.111.131V11.621H0v.621H1.973v2.194H2.64v-2.194h2v-.62H2.609V9.446h-.318zm15.709 4.516v3.254h-3.016v.927h3.016v3.217h1.072v-3.216H21.74v-.928H18.754v-3.254h-.533zm-12.463.008v3.246H2.262v.928h2.957v3.189H6.32v-3.189h2.955v-.928H6.32V13.97h-.55zm6.316 4.578l.002 1.103v1.1H9.566v.812h1.971v2.262h.928l.012-1.119.017-1.143H14.463v-.812h-2V18.549h-.465z"/></svg>
-                        </div>
-                        <h4 class="tech-name">Tableau</h4>
-                        <p class="tech-desc">LOD Expressions, Interactive Dashboards, Calculations</p>
-                    </div>
-
-                    <!-- Power BI -->
-                    <div class="tech-card">
-                        <div class="tech-icon-wrapper">
-                            <!-- Power BI SVG from Simple Icons -->
-                            <svg role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="tech-icon"><path d="M10 12a1 1 0 0 1 1 1v11H4a1 1 0 0 1-1-1V13a1 1 0 0 1 1-1h6Zm-2-.5V7a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v17h-4.5V13a1.5 1.5 0 0 0-1.5-1.5H8Zm5-6V1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v22a1 1 0 0 1-1 1h-3.5V7A1.5 1.5 0 0 0 15 5.5h-2Z"/></svg>
-                        </div>
-                        <h4 class="tech-name">Power BI</h4>
-                        <p class="tech-desc">DAX Queries, Data Modeling, Custom Visualization Reports</p>
-                    </div>
-
-                    <!-- MS Excel -->
-                    <div class="tech-card">
-                        <div class="tech-icon-wrapper">
-                            <!-- Excel SVG from Simple Icons -->
-                            <svg role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="tech-icon"><path d="M23 1.5q.41 0 .7.3.3.29.3.7v19q0 .41-.3.7-.29.3-.7.3H7q-.41 0-.7-.3-.3-.29-.3-.7V18H1q-.41 0-.7-.3-.3-.29-.3-.7V7q0-.41.3-.7Q.58 6 1 6h5V2.5q0-.41.3-.7.29-.3.7-.3zM6 13.28l1.42 2.66h2.14l-2.38-3.87 2.34-3.8H7.46l-1.3 2.4-.05.08-.04.09-.64-1.28-.66-1.29H2.59l2.27 3.82-2.48 3.85h2.16zM14.25 21v-3H7.5v3zm0-4.5v-3.75H12v3.75zm0-5.25V7.5H12v3.75zm0-5.25V3H7.5v3zm8.25 15v-3h-6.75v3zm0-4.5v-3.75h-6.75v3.75zm0-5.25V7.5h-6.75v3.75zm0-5.25V3h-6.75v3Z"/></svg>
-                        </div>
-                        <h4 class="tech-name">MS Excel</h4>
-                        <p class="tech-desc">Pivot Tables, VLOOKUP/XLOOKUP, Power Query, Macros</p>
-                    </div>
-
-                    <!-- Jupyter -->
-                    <div class="tech-card">
-                        <div class="tech-icon-wrapper">
-                            <!-- Jupyter SVG from Devicon (monochrome) -->
-                            <svg viewBox="0 0 128 128" fill="currentColor" class="tech-icon"><path d="M109.766 7.281a7.691 7.691 0 01-1.09 4.282 7.583 7.583 0 01-3.262 2.949 7.49 7.49 0 01-4.34.62 7.525 7.525 0 01-3.953-1.913A7.642 7.642 0 0195.137 5a7.606 7.606 0 012.629-3.531 7.509 7.509 0 014.136-1.461 7.51 7.51 0 015.422 1.996 7.627 7.627 0 012.438 5.273zm0 0" /><path d="M65.758 96.79c-20.098 0-37.649-7.364-46.766-18.267a49.95 49.95 0 0018.102 24.254 49.251 49.251 0 0028.676 9.215 49.279 49.279 0 0028.675-9.215 49.917 49.917 0 0018.094-24.254C103.406 89.426 85.855 96.79 65.758 96.79zm0 0M65.75 25.883c20.098 0 37.652 7.367 46.766 18.265a49.95 49.95 0 00-18.102-24.253 49.27 49.27 0 00-28.672-9.22 49.27 49.27 0 00-28.672 9.22A49.909 49.909 0 0018.97 44.148C28.102 33.27 45.652 25.883 65.75 25.883zm0 0" /><path d="M38.164 117.984a9.671 9.671 0 01-1.371 5.399 9.5 9.5 0 01-9.59 4.504 9.405 9.405 0 01-4.98-2.418 9.671 9.671 0 01-2.809-4.797 9.73 9.73 0 01.313-5.567 9.624 9.624 0 013.328-4.453 9.466 9.466 0 0112.043.688 9.63 9.63 0 013.066 6.648zm0 0" /><path d="M21.285 23.418a5.53 5.53 0 01-3.14-.816 5.627 5.627 0 01-2.618-5.672 5.612 5.612 0 011.407-2.95 5.593 5.593 0 012.789-1.664 5.46 5.46 0 013.238.184 5.539 5.539 0 012.586 1.969 5.66 5.66 0 01-.399 7.129 5.557 5.557 0 01-3.867 1.82zm0 0" /></svg>
-                        </div>
-                        <h4 class="tech-name">Jupyter</h4>
-                        <p class="tech-desc">Interactive Notebooks, Dynamic Documentation, EDA</p>
-                    </div>
-
-                    <!-- Libraries (Pandas, NumPy, Scikit-Learn) -->
-                    <div class="tech-card">
-                        <div class="tech-icon-wrapper">
-                            <!-- Custom grid representation for data arrays/dataframes -->
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="tech-icon">
-                                <rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5" />
-                                <line x1="9" y1="3" x2="9" y2="21" stroke-width="1.5" />
-                                <line x1="15" y1="3" x2="15" y2="21" stroke-width="1.5" />
-                                <line x1="3" y1="9" x2="21" y2="9" stroke-width="1.5" />
-                                <line x1="3" y1="15" x2="21" y2="15" stroke-width="1.5" />
-                                <rect x="9.5" y="9.5" width="5" height="5" fill="currentColor" opacity="0.35" stroke="none" />
-                            </svg>
-                        </div>
-                        <h4 class="tech-name">Python Libraries</h4>
-                        <p class="tech-desc">Pandas, NumPy, Matplotlib, Scikit-Learn (ML Models)</p>
-                    </div>
-
-                    <!-- Git & GitHub -->
-                    <div class="tech-card">
-                        <div class="tech-icon-wrapper">
-                            <!-- Git SVG -->
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="tech-icon"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M6 9v6M9 15h6M6 15c6 0 9-3 9-6"/></svg>
-                        </div>
-                        <h4 class="tech-name">Git &amp; GitHub</h4>
-                        <p class="tech-desc">Version Control, Collaborative Repositories, Deployment</p>
-                    </div>
-                </div>
-
-                <!-- Section 2: Analytical Methodologies (Clean grouped structure) -->
-                <h3 class="skills-group-title reveal" style="margin-top: 60px;">Analysis Methodologies</h3>
-                <div class="methods-grid reveal">
-                    <div class="method-card">
-                        <div class="method-header">
-                            <span class="method-number">01</span>
-                            <h4>Business Intelligence &amp; Dashboards</h4>
-                        </div>
-                        <p>Designing interactive executive dashboards in Tableau and Power BI. Custom DAX queries and LOD expressions to track seasonal KPIs and surface underperforming regions.</p>
-                    </div>
-                    
-                    <div class="method-card">
-                        <div class="method-header">
-                            <span class="method-number">02</span>
-                            <h4>Cohort &amp; Customer Churn Analysis</h4>
-                        </div>
-                        <p>Segmenting customer transactions using SQL and Python to identify high-risk customer pools, model retention, and forecast lifetime value impact.</p>
-                    </div>
-                    
-                    <div class="method-card">
-                        <div class="method-header">
-                            <span class="method-number">03</span>
-                            <h4>Exploratory Data Analysis (EDA)</h4>
-                        </div>
-                        <p>Investigating raw datasets using Jupyter Notebooks, Pandas, and NumPy. Identifying correlation matrices, statistical distributions, and seasonal spikes.</p>
-                    </div>
-
-                    <div class="method-card">
-                        <div class="method-header">
-                            <span class="method-number">04</span>
-                            <h4>Hypothesis &amp; A/B Testing</h4>
-                        </div>
-                        <p>Evaluating product configurations and campaign interventions using statistical models, significance values, and cohort distributions to ensure data-driven confidence.</p>
-                    </div>
-
-                    <div class="method-card">
-                        <div class="method-header">
-                            <span class="method-number">05</span>
-                            <h4>RFM &amp; ROI Analytics</h4>
-                        </div>
-                        <p>Recency, Frequency, and Monetary scoring to model high-value customer groups and simulate returns on marketing interventions, projecting payback schedules.</p>
-                    </div>
-
-                    <div class="method-card">
-                        <div class="method-header">
-                            <span class="method-number">06</span>
-                            <h4>Trend &amp; Statistical Analysis</h4>
-                        </div>
-                        <p>Applying regression, distributions, demand forecasting, and correlation checks to translate raw data trends into clear, actionable recommendations.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certifications Section -->
-        <section id="certifications" class="certifications-section section-padding">
-            <div class="container">
-                <h2 class="section-title reveal">Certifications</h2>
-                <p class="section-subtitle reveal">Demonstrated commitment to learning and domain capability.</p>
-                
-                <div class="certifications-grid">
-                    <!-- Cert 1 -->
-                    <a href="assets/certificates/deloitte-analytics.pdf" target="_blank" class="cert-card reveal">
-                        <div class="cert-badge-wrapper">
-                            <svg class="cert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        </div>
-                        <div class="cert-info">
-                            <h3 class="cert-name">Data Analytics Job Simulation</h3>
-                            <p class="cert-issuer">Deloitte Australia (Forage)</p>
-                            <p class="cert-date">Sept 23, 2025</p>
-                        </div>
-                        <div class="cert-arrow">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                        </div>
-                    </a>
-
-                    <!-- Cert 2 -->
-                    <a href="assets/certificates/ibm-python.pdf" target="_blank" class="cert-card reveal">
-                        <div class="cert-badge-wrapper">
-                            <svg class="cert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        </div>
-                        <div class="cert-info">
-                            <h3 class="cert-name">Python 101 for Data Science</h3>
-                            <p class="cert-issuer">IBM Developer Skills Network</p>
-                            <p class="cert-date">Dec 29, 2025</p>
-                        </div>
-                        <div class="cert-arrow">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                        </div>
-                    </a>
-
-                    <!-- Cert 3 -->
-                    <a href="assets/certificates/tata-genai.pdf" target="_blank" class="cert-card reveal">
-                        <div class="cert-badge-wrapper">
-                            <svg class="cert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        </div>
-                        <div class="cert-info">
-                            <h3 class="cert-name">GenAI Powered Data Analytics Simulation</h3>
-                            <p class="cert-issuer">TATA (via Forage)</p>
-                            <p class="cert-date">Sept 25, 2025</p>
-                        </div>
-                        <div class="cert-arrow">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                        </div>
-                    </a>
-
-                    <!-- Cert 4 -->
-                    <a href="assets/certificates/kaggle-ml.png" target="_blank" class="cert-card reveal">
-                        <div class="cert-badge-wrapper">
-                            <svg class="cert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        </div>
-                        <div class="cert-info">
-                            <h3 class="cert-name">Intro to Machine Learning</h3>
-                            <p class="cert-issuer">Kaggle</p>
-                            <p class="cert-date">Apr 1, 2026</p>
-                        </div>
-                        <div class="cert-arrow">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                        </div>
-                    </a>
+                <!-- Toggle Projects Expander Button -->
+                <div class="projects-toggle-container reveal">
+                    <button class="btn btn-secondary" id="toggle-projects-btn" data-expanded="false">
+                        <span>Show More Projects (6 More)</span>
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
         <section id="contact" class="contact-section section-padding">
-            <div class="container text-center">
-                <h2 class="section-title reveal">Let's Connect</h2>
-                <p class="section-subtitle reveal">Open to entry-level Data Analyst roles, internships, and collaborative projects.</p>
-                
-                <div class="contact-grid reveal">
-                    <!-- Email Card -->
-                    <a href="mailto:tanayjujarao@gmail.com" class="contact-card">
-                        <div class="contact-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                        </div>
-                        <h3>Email</h3>
-                        <p class="contact-detail">tanayjujarao@gmail.com</p>
-                        <span class="contact-action">Send email &rarr;</span>
-                    </a>
-
-                    <!-- LinkedIn Card -->
-                    <a href="https://linkedin.com/in/tanay-jujarao" target="_blank" rel="noopener noreferrer" class="contact-card">
-                        <div class="contact-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                        </div>
-                        <h3>LinkedIn</h3>
-                        <p class="contact-detail">linkedin.com/in/tanay-jujarao</p>
-                        <span class="contact-action">View profile &rarr;</span>
-                    </a>
-
-                    <!-- GitHub Card -->
-                    <a href="https://github.com/tanayjujarao-py" target="_blank" rel="noopener noreferrer" class="contact-card">
-                        <div class="contact-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        </div>
-                        <h3>GitHub</h3>
-                        <p class="contact-detail">github.com/tanayjujarao-py</p>
-                        <span class="contact-action">Explore code &rarr;</span>
-                    </a>
+            <div class="container">
+                <div class="contact-card reveal">
+                    <div class="terminal-badge" style="margin-bottom: 16px;">
+                        ~/portfolio $ echo "Let's Connect"
+                    </div>
+                    <h2 class="contact-heading">Let's Build Something Great Together</h2>
+                    <p class="contact-subtext">
+                        I am currently open to Data Analyst, Analytics Engineer, and Data Engineering roles or internship opportunities. Feel free to reach out directly via email or LinkedIn!
+                    </p>
+                    
+                    <div class="contact-links-grid">
+                        <a href="mailto:tanayjujarao@gmail.com" class="btn btn-primary">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            tanayjujarao@gmail.com
+                        </a>
+                        <a href="https://linkedin.com/in/tanay-jujarao" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/tanayjujarao-py" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            GitHub
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-container">
-            <p class="footer-author">Designed &amp; built by Tanay Jujarao</p>
-            <p class="footer-copyright">&copy; 2026 Tanay Jujarao. All rights reserved.</p>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Tanay Jujarao. Designed with a Modern Analytics Engineering System.</p>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top" id="back-to-top" aria-label="Scroll back to top">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
     </button>
 
-    <!-- Case Study Modal -->
-    <div id="ab-test-modal" class="case-study-modal" aria-hidden="true">
-        <div class="modal-backdrop"></div>
-        <div class="modal-wrapper">
-            <div class="modal-container">
-                <!-- Close Button -->
-                <button class="modal-close-btn" aria-label="Close Case Study">&times;</button>
-                
-                <!-- Header -->
-                <div class="modal-header">
-                    <span class="modal-badge">A/B Testing Case Study</span>
-                    <h2 class="modal-title">A/B Testing Analysis: Website Background Color Experiment</h2>
-                    <p class="modal-subtitle">Experimental Design &amp; Statistical Inference Report</p>
-                </div>
-                
-                <div class="modal-content-body">
-                    
-                    <!-- 1. Business Problem -->
-                    <section class="modal-section">
-                        <div class="section-icon-header">
-                            <span class="section-num">01</span>
-                            <h3>Business Problem</h3>
-                        </div>
-                        <div class="section-content">
-                            <p>
-                                The primary business objective was to evaluate whether changing the website's background color from <strong>White (Control)</strong> to <strong>Black (Treatment)</strong> would increase user conversion rates (e.g., registrations, purchases) without negatively impacting user engagement.
-                            </p>
-                            <p>
-                                While a dark theme can offer a modern aesthetic and higher visual contrast, there is a risk that it could reduce readability or introduce user friction. This experiment was designed to quantify these effects with statistical rigor before making a global deployment decision.
-                            </p>
-                        </div>
-                    </section>
-                    
-                    <!-- 2. Project Overview -->
-                    <section class="modal-section">
-                        <div class="section-icon-header">
-                            <span class="section-num">02</span>
-                            <h3>Project Overview</h3>
-                        </div>
-                        <div class="section-content">
-                            <p>
-                                The experiment ran over a fixed duration where incoming user sessions were randomly assigned to one of two variations:
-                            </p>
-                            <div class="overview-grid">
-                                <div class="overview-item">
-                                    <span class="overview-label">Control Group</span>
-                                    <span class="overview-value">White Background</span>
-                                </div>
-                                <div class="overview-item">
-                                    <span class="overview-label">Treatment Group</span>
-                                    <span class="overview-value">Black Background</span>
-                                </div>
-                                <div class="overview-item">
-                                    <span class="overview-label">Total Sample Size</span>
-                                    <span class="overview-value">5,001 Session Records</span>
-                                </div>
-                                <div class="overview-item">
-                                    <span class="overview-label">Primary Metric</span>
-                                    <span class="overview-value">Conversion Rate</span>
-                                </div>
-                            </div>
-                            <div class="guardrail-box">
-                                <strong>Guardrail Metrics:</strong> To guarantee that the background change didn't harm user experience, we monitored <strong>Time Spent</strong> (seconds) and <strong>Page Views</strong> per session. These served as safety indicators to prevent deployment if engagement significantly dropped.
-                            </div>
-                        </div>
-                    </section>
-                    
-                    <!-- 3. Key Metrics Dashboard -->
-                    <section class="modal-section">
-                        <div class="section-icon-header">
-                            <span class="section-num">03</span>
-                            <h3>Key Metrics Dashboard</h3>
-                        </div>
-                        <div class="section-content">
-                            <div class="dashboard-grid">
-                                <div class="dashboard-card">
-                                    <span class="db-card-label">Conversion Rate</span>
-                                    <span class="db-card-value" data-val="14.07" data-prefix="5.40% → " data-suffix="%">5.40% → 14.07%</span>
-                                    <span class="db-card-trend positive">+160.5% Lift</span>
-                                </div>
-                                <div class="dashboard-card">
-                                    <span class="db-card-label">Statistical Significance</span>
-                                    <span class="db-card-value">p &lt; 0.001</span>
-                                    <span class="db-card-trend positive">Highly Significant</span>
-                                </div>
-                                <div class="dashboard-card">
-                                    <span class="db-card-label">Confidence Level</span>
-                                    <span class="db-card-value" data-val="95" data-suffix="%">95%</span>
-                                    <span class="db-card-trend">Alpha (&alpha;) = 0.05</span>
-                                </div>
-                                <div class="dashboard-card highlight">
-                                    <span class="db-card-label">Recommendation</span>
-                                    <span class="db-card-value">Deploy Treatment</span>
-                                    <span class="db-card-trend positive">Deploy 100% Traffic</span>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    
-                    <!-- 4. Visualizations -->
-                    <section class="modal-section">
-                        <div class="section-icon-header">
-                            <span class="section-num">04</span>
-                            <h3>Visualizations</h3>
-                        </div>
-                        <div class="section-content">
-                            <p class="visualization-intro">Exploratory charts showing conversion rate outcomes, user engagement metrics, and randomization splits.</p>
-                            
-                            <div class="charts-container">
-                                <!-- Chart 1: Conversion Rate -->
-                                <div class="chart-card-wrapper width-full">
-                                    <div class="chart-header-inline">
-                                        <span class="chart-icon">&para;</span>
-                                        <h4>Conversion Rate Comparison</h4>
-                                    </div>
-                                    <div class="chart-box">
-                                        <svg viewBox="0 0 320 200" class="svg-chart">
-                                            <line x1="40" y1="30" x2="300" y2="30" stroke="rgba(255,255,255,0.03)" />
-                                            <line x1="40" y1="75" x2="300" y2="75" stroke="rgba(255,255,255,0.03)" />
-                                            <line x1="40" y1="120" x2="300" y2="120" stroke="rgba(255,255,255,0.03)" />
-                                            <line x1="40" y1="165" x2="300" y2="165" stroke="rgba(255,255,255,0.1)" />
-                                            
-                                            <text x="32" y="34" class="chart-axis-text" text-anchor="end">15.0%</text>
-                                            <text x="32" y="79" class="chart-axis-text" text-anchor="end">10.0%</text>
-                                            <text x="32" y="124" class="chart-axis-text" text-anchor="end">5.0%</text>
-                                            <text x="32" y="169" class="chart-axis-text" text-anchor="end">0.0%</text>
-                                            
-                                            <rect x="75" y="116" width="50" height="49" rx="4" class="chart-bar control-bar" fill="url(#gradient-control-bar)" />
-                                            <text x="100" y="105" class="chart-val-text" text-anchor="middle">5.40%</text>
-                                            
-                                            <rect x="195" y="38" width="50" height="127" rx="4" class="chart-bar treatment-bar" fill="url(#gradient-treatment-bar)" />
-                                            <text x="220" y="27" class="chart-val-text" text-anchor="middle">14.07%</text>
-                                            
-                                            <text x="100" y="186" class="chart-axis-text" text-anchor="middle">Control (White)</text>
-                                            <text x="220" y="186" class="chart-axis-text" text-anchor="middle">Treatment (Black)</text>
-                                        </svg>
-                                    </div>
-                                    <p class="chart-caption">Primary Metric: The Treatment group shows a significant, high-converting lift.</p>
-                                </div>
-                            </div>
-                            
-                            <!-- SVG Gradients definitions -->
-                            <svg width="0" height="0" style="display:block;">
-                                <defs>
-                                    <linearGradient id="gradient-control-bar" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="0%" stop-color="#64748b" />
-                                        <stop offset="100%" stop-color="#334155" />
-                                    </linearGradient>
-                                    <linearGradient id="gradient-treatment-bar" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="0%" stop-color="#a855f7" />
-                                        <stop offset="100%" stop-color="#6366f1" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                        </div>
-                    </section>
-                    
-                    <!-- 5. Methodology -->
-                    <section class="modal-section">
-                        <div class="section-icon-header">
-                            <span class="section-num">05</span>
-                            <h3>Methodology</h3>
-                        </div>
-                        <div class="section-content">
-                            <div class="methodology-timeline">
-                                <div class="timeline-item">
-                                    <div class="timeline-badge">1</div>
-                                    <div class="timeline-panel">
-                                        <h4>Data Cleaning</h4>
-                                        <p>Removed records with null session IDs, excluded duplicate hits, and filtered out outliers (e.g., session durations &lt; 1s, which indicate bots).</p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-badge">2</div>
-                                    <div class="timeline-panel">
-                                        <h4>Exploratory Data Analysis</h4>
-                                        <p>Derived baseline parameters and examined the shape of distributions. Identified skewness in time-spent profiles requiring non-parametric or robust tests.</p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-badge">3</div>
-                                    <div class="timeline-panel">
-                                        <h4>Conversion Rate Calculation</h4>
-                                        <p>Computed proportion of unique visitors converting in each group: Control (5.40% conversion rate) vs. Treatment (14.07% conversion rate).</p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-badge">4</div>
-                                    <div class="timeline-panel">
-                                        <h4>Two-Proportion Z-Test</h4>
-                                        <p>Formulated null hypothesis (\(H_0\): \(p_{\text{control}} = p_{\text{treatment}}\)) and executed a z-test on user conversion counts to compute z-score and probability value.</p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-badge">5</div>
-                                    <div class="timeline-panel">
-                                        <h4>95% Confidence Interval</h4>
-                                        <p>Established the precision of the difference in conversion proportions using standard errors, resulting in a range of [+7.04%, +10.30%].</p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-badge">6</div>
-                                    <div class="timeline-panel">
-                                        <h4>Welch's t-Test</h4>
-                                        <p>Compared average session time spent and page views across groups using Welch's t-test to check if the new design degraded user interaction.</p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-badge">7</div>
-                                    <div class="timeline-panel">
-                                        <h4>Chi-Square Test</h4>
-                                        <p>Calculated independence between variant assignments and user demographics (device categories, geographic locations) to verify randomized allocation.</p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-badge">8</div>
-                                    <div class="timeline-panel">
-                                        <h4>Business Recommendation</h4>
-                                        <p>Mapped statistical results to product constraints, verifying guardrail criteria and recommending deployment based on positive ROI predictions.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    
-                    <!-- 6. Statistical Analysis -->
-                    <section class="modal-section">
-                        <div class="section-icon-header">
-                            <span class="section-num">06</span>
-                            <h3>Statistical Analysis</h3>
-                        </div>
-                        <div class="section-content">
-                            <div class="table-responsive">
-                                <table class="stats-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Metric</th>
-                                            <th>Statistical Test</th>
-                                            <th>Result</th>
-                                            <th>Decision</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Conversion Rate</td>
-                                            <td>Two-Proportion Z-Test</td>
-                                            <td class="text-highlight">Significant (p &lt; 0.001)</td>
-                                            <td><span class="table-badge badge-danger">Reject H₀</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Time Spent</td>
-                                            <td>Welch's t-Test</td>
-                                            <td>Not Significant (p = 0.42)</td>
-                                            <td><span class="table-badge badge-info">Fail to Reject H₀</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Page Views</td>
-                                            <td>Welch's t-Test</td>
-                                            <td>Not Significant (p = 0.68)</td>
-                                            <td><span class="table-badge badge-info">Fail to Reject H₀</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Device Distribution</td>
-                                            <td>Chi-Square Test</td>
-                                            <td>Balanced (p = 0.94)</td>
-                                            <td><span class="table-badge badge-success">No Bias Detected</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Location Distribution</td>
-                                            <td>Chi-Square Test</td>
-                                            <td>Balanced (p = 0.88)</td>
-                                            <td><span class="table-badge badge-success">No Bias Detected</span></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </section>
-                    
-                    <!-- 7. Sample Code -->
-                    <section class="modal-section">
-                        <div class="section-icon-header">
-                            <span class="section-num">07</span>
-                            <h3>Sample Code</h3>
-                        </div>
-                        <div class="section-content">
-                            <p>Concise Python snippet demonstrating statistical hypothesis testing on conversions and user session distributions:</p>
-                            <div class="code-block-wrapper">
-                                <pre><code class="language-python"># Two-Proportion Z-Test for conversion rate comparison
-from statsmodels.stats.proportion import proportions_ztest
-
-conversions = np.array([135, 352])   # Control (White), Treatment (Black)
-sessions = np.array([2500, 2501])     # Total user sessions per group
-
-z_stat, p_value = proportions_ztest(count=conversions, nobs=sessions)
-print(f"Z-statistic: {z_stat:.4f}, P-value: {p_value:.4e}")
-# Output: Z-statistic: -10.4578, P-value: 1.3452e-25 (p < 0.001)</code></pre>
-                            </div>
-                        </div>
-                    </section>
-                    
-                    <!-- 8. Business Recommendation -->
-                    <section class="modal-section">
-                        <div class="section-icon-header">
-                            <span class="section-num">08</span>
-                            <h3>Business Recommendation</h3>
-                        </div>
-                        <div class="section-content">
-                            <div class="recommendation-box">
-                                <div class="rec-icon-wrapper">
-                                    <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                </div>
-                                <div class="rec-text-content">
-                                    <h4>Final Deployment Decision: <strong>DEPLOY TREATMENT</strong></h4>
-                                    <ul>
-                                        <li><strong>Significant Conversion Increase:</strong> The Treatment (black background) demonstrated a strong conversion lift from 5.40% to 14.07%. With \(p < 0.001\), the result is highly statistically significant, allowing us to safely reject the null hypothesis.</li>
-                                        <li><strong>Safe Guardrail Performance:</strong> Welch's t-test on Time Spent (\(p = 0.42\)) and Page Views (\(p = 0.68\)) proved there is no statistical difference in engagement, meaning the dark background doesn't negatively impact session length or cause readability issues.</li>
-                                        <li><strong>Clean Experimental Setup:</strong> Randomization checks using Chi-Square tests confirmed that assignment was independent of device category and location, verifying the absence of sample selection bias.</li>
-                                        <li><strong>Deployment Strategy:</strong> Proceed with a full rollout of the dark background treatment. Continue tracking standard engagement metrics (guardrails) in production during the first 30 days to ensure performance stability.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    
-                    <!-- 9. Skills Demonstrated -->
-                    <section class="modal-section">
-                        <div class="section-icon-header">
-                            <span class="section-num">09</span>
-                            <h3>Skills Demonstrated</h3>
-                        </div>
-                        <div class="section-content">
-                            <div class="skills-grid-modal">
-                                <div class="skill-card-modal">A/B Testing</div>
-                                <div class="skill-card-modal">Hypothesis Testing</div>
-                                <div class="skill-card-modal">Statistical Inference</div>
-                                <div class="skill-card-modal">Confidence Intervals</div>
-                                <div class="skill-card-modal">Experimental Design</div>
-                                <div class="skill-card-modal">Data Cleaning</div>
-                                <div class="skill-card-modal">Exploratory Data Analysis</div>
-                                <div class="skill-card-modal">Data Visualization</div>
-                                <div class="skill-card-modal">Business Analytics</div>
-                                <div class="skill-card-modal">Python</div>
-                            </div>
-                        </div>
-                    </section>
-                    
-                    <!-- 10. Project Links -->
-                    <section class="modal-section last-section-modal">
-                        <div class="section-icon-header">
-                            <span class="section-num">10</span>
-                            <h3>Project Links</h3>
-                        </div>
-                        <div class="section-content modal-actions-footer">
-                            <a href="https://github.com/tanayjujarao-py/ab-testing-website-experiment" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                                View GitHub Repository
-                            </a>
-                            <a href="https://github.com/tanayjujarao-py/ab-testing-website-experiment/blob/main/AB_Testing_Background_Color_Experiment.ipynb" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                                View Jupyter Notebook
-                            </a>
-                        </div>
-                    </section>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Custom JS -->
+    <!-- Custom JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
