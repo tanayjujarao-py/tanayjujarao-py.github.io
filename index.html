@@ -358,42 +358,44 @@
                         </div>
                     </div>
 
-                    <!-- Featured Project 2: dbt + Snowflake Retail Analytics (Data Engineering #2) -->
+                    <!-- Featured Project 2: Airbnb Data Engineering Pipeline (Data Engineering #2) -->
                     <div class="project-card-featured reveal">
                         <div class="project-media">
                             <span class="project-flagship-badge">★ DATA ENGINEERING PIPELINE</span>
-                            <img src="assets/retail-elt-pipeline.png" alt="dbt + Snowflake Retail Analytics ELT Pipeline Architecture" class="project-img">
+                            <img src="assets/airbnb-data-pipeline.png" alt="Airbnb Data Engineering Pipeline Architecture (S3 to Snowflake to dbt Core)" class="project-img">
                         </div>
                         <div class="project-details">
                             <div>
-                                <span class="project-category-tag">DATA ENGINEERING / ANALYTICS ENGINEERING</span>
-                                <h3 class="project-title">dbt + Snowflake Retail Analytics — ELT Pipeline</h3>
+                                <span class="project-category-tag">CLOUD DATA ENGINEERING / ANALYTICS ENGINEERING</span>
+                                <h3 class="project-title">Airbnb Data Engineering Pipeline — S3 → Snowflake → dbt Core</h3>
                                 <p class="project-impact-statement">
-                                    Production-style ELT pipeline built on Snowflake with dbt Bronze/Silver/Gold Medallion architecture and automated testing suites.
+                                    End-to-end cloud pipeline ingesting raw Airbnb data from AWS S3 into Snowflake and transforming it through Medallion architecture (Bronze → Silver → Gold) using dbt Core.
                                 </p>
 
                                 <div class="metric-callout-box">
-                                    <div class="metric-value">Medallion Arch.</div>
-                                    <div class="metric-desc">100% Automated Quality Testing</div>
+                                    <div class="metric-value">Medallion &amp; SCD2</div>
+                                    <div class="metric-desc">Incremental MERGE &amp; Reusable Jinja Macros</div>
                                 </div>
 
                                 <ul class="project-bullets">
-                                    <li>Architected a layered Medallion pipeline (Bronze → Silver → Gold) on Snowflake using dbt to transform raw retail operational data into analytics-ready data marts.</li>
-                                    <li>Enforced strict data quality via automated dbt testing suites (<code>unique</code>, <code>not_null</code>, <code>accepted_values</code>, custom generic tests).</li>
-                                    <li>Developed reusable Jinja macros, SCD Type 2 snapshots for historical audit tracking, and seed-based lookup tables with comprehensive GitHub documentation.</li>
+                                    <li>Configured AWS S3 cloud ingestion and Snowflake external stages to load raw multi-entity Airbnb datasets (hosts, listings, bookings) into Snowflake source tables.</li>
+                                    <li>Built Bronze, Silver, and Gold layer models in dbt Core using incremental <code>MERGE</code> materializations, One Big Table (OBT) analytics marts, and reusable Jinja macros (<code>multiply</code>, <code>trimmer</code>).</li>
+                                    <li>Enforced strict data quality via dbt test suites (<code>unique</code>, <code>not_null</code>, <code>accepted_values</code>) and tracked historical dimensional changes using dbt snapshots (SCD Type 2).</li>
                                 </ul>
 
                                 <div class="project-tech-stack">
-                                    <span class="tech-badge">dbt Core</span>
+                                    <span class="tech-badge">AWS S3</span>
                                     <span class="tech-badge">Snowflake</span>
-                                    <span class="tech-badge">SQL</span>
+                                    <span class="tech-badge">dbt Core 1.12</span>
+                                    <span class="tech-badge">Python 3.12</span>
                                     <span class="tech-badge">Jinja</span>
-                                    <span class="tech-badge">Python</span>
+                                    <span class="tech-badge">uv</span>
+                                    <span class="tech-badge">SQL</span>
                                 </div>
                             </div>
 
                             <div class="project-footer-actions">
-                                <a href="https://github.com/tanayjujarao-py/dbt-snowflake-data-analytics" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                                <a href="https://github.com/tanayjujarao-py/airbnb-data-engineering" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
                                     <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                                     View GitHub Repository
                                 </a>
