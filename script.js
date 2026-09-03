@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Active Navigation Highlight
         let currentSectionId = '';
         const sections = document.querySelectorAll('section[id]');
-        const scrollPosition = scrollY + 200; // Offset for navbar trigger
+        const scrollPosition = scrollY + 200;
 
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
@@ -175,36 +175,4 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(element => {
         revealObserver.observe(element);
     });
-
-    // ==========================================================================
-    // SHOW MORE PROJECTS TOGGLE
-    // ==========================================================================
-    const toggleProjectsBtn = document.getElementById('toggle-projects-btn');
-    const hiddenProjects = document.querySelectorAll('.projects-hidden');
-
-    if (toggleProjectsBtn) {
-        toggleProjectsBtn.addEventListener('click', () => {
-            const isExpanded = toggleProjectsBtn.getAttribute('data-expanded') === 'true';
-
-            if (isExpanded) {
-                hiddenProjects.forEach(project => {
-                    project.style.display = 'none';
-                });
-                toggleProjectsBtn.setAttribute('data-expanded', 'false');
-                toggleProjectsBtn.innerHTML = `
-                    <span>Show More Projects (6 More)</span>
-                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                `;
-            } else {
-                hiddenProjects.forEach(project => {
-                    project.style.display = 'flex';
-                });
-                toggleProjectsBtn.setAttribute('data-expanded', 'true');
-                toggleProjectsBtn.innerHTML = `
-                    <span>Show Fewer Projects</span>
-                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
-                `;
-            }
-        });
-    }
 });

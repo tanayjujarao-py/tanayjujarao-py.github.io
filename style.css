@@ -4,7 +4,7 @@
 :root {
     --bg-dark: #0F172A;            /* Dark Navy / Slate */
     --bg-dark-rgb: 15, 23, 42;
-    --bg-card: rgba(30, 41, 59, 0.7); /* Translucent Slate Card */
+    --bg-card: rgba(30, 41, 59, 0.75); /* Translucent Slate Card */
     --bg-card-hover: rgba(30, 41, 59, 0.95);
     
     --primary: #22D3EE;            /* Neon Cyan */
@@ -18,7 +18,7 @@
     
     --accent: #F4F4F4;             /* Light Contrast Gray */
     --accent-purple: #C084FC;      /* Subtle Purple Accent */
-    --accent-green: #34D399;       /* Success / Active Accent */
+    --accent-green: #34D399;       /* Active Accent */
     
     --border-color: rgba(51, 65, 85, 0.6);
     --border-hover: rgba(34, 211, 238, 0.4);
@@ -52,9 +52,9 @@ html {
 body {
     background-color: var(--bg-dark);
     background-image: 
-        radial-gradient(circle at 15% 15%, rgba(34, 211, 238, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 85% 65%, rgba(192, 132, 252, 0.04) 0%, transparent 40%),
-        linear-gradient(rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.95)),
+        radial-gradient(circle at 15% 15%, rgba(34, 211, 238, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 85% 65%, rgba(192, 132, 252, 0.05) 0%, transparent 40%),
+        linear-gradient(rgba(15, 23, 42, 0.94), rgba(15, 23, 42, 0.94)),
         url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm1 1h38v38H1V1z' fill='%23334155' fill-opacity='0.15' fill-rule='evenodd'/%3E%3C/svg%3E");
     color: var(--text-primary);
     font-family: var(--font-sans);
@@ -244,7 +244,7 @@ img {
     height: var(--header-height);
     z-index: 1000;
     transition: var(--transition-normal);
-    background: rgba(15, 23, 42, 0.75);
+    background: rgba(15, 23, 42, 0.8);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(51, 65, 85, 0.4);
@@ -288,7 +288,7 @@ img {
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 26px;
 }
 
 .nav-link {
@@ -344,7 +344,8 @@ img {
     padding-top: calc(var(--header-height) + 40px);
     padding-bottom: 60px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
 }
 
@@ -437,7 +438,7 @@ img {
     color: var(--text-secondary);
     max-width: 680px;
     margin-bottom: 30px;
-    line-height: 1.7;
+    line-height: 1.75;
 }
 
 .hero-actions {
@@ -480,7 +481,7 @@ img {
 
 /* Impact Callouts Strip */
 .impact-strip {
-    margin-top: 40px;
+    margin-top: 45px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 18px;
@@ -489,7 +490,7 @@ img {
 .impact-card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
-    padding: 18px 16px;
+    padding: 20px 16px;
     border-radius: 10px;
     text-align: center;
     position: relative;
@@ -521,7 +522,7 @@ img {
 
 .impact-val {
     font-family: var(--font-mono);
-    font-size: 1.7rem;
+    font-size: 1.75rem;
     font-weight: 800;
     color: var(--primary);
     margin-bottom: 4px;
@@ -537,10 +538,10 @@ img {
 }
 
 /* ==========================================================================
-   TECH STACK STRIP (LOGOS & ICONS)
+   TECH STACK STRIP (AUTHENTIC BRAND LOGOS)
    ========================================================================== */
 .tech-strip-section {
-    padding: 50px 0;
+    padding: 55px 0;
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
     background: rgba(15, 23, 42, 0.4);
@@ -548,31 +549,29 @@ img {
 
 .tech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+    gap: 18px;
     align-items: center;
     justify-content: center;
 }
 
 .tech-item {
-    background: rgba(30, 41, 59, 0.6);
+    background: rgba(30, 41, 59, 0.65);
     border: 1px solid var(--border-color);
     border-radius: 10px;
-    padding: 16px 12px;
+    padding: 18px 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     transition: var(--transition-normal);
     position: relative;
     cursor: default;
 }
 
 .tech-item svg {
-    width: 32px;
-    height: 32px;
-    fill: var(--text-secondary);
-    color: var(--text-secondary);
+    width: 34px;
+    height: 34px;
     transition: var(--transition-fast);
 }
 
@@ -586,14 +585,8 @@ img {
 .tech-item:hover {
     background: rgba(30, 41, 59, 0.95);
     border-color: var(--primary);
-    box-shadow: 0 0 15px var(--primary-glow);
+    box-shadow: 0 0 18px var(--primary-glow);
     transform: translateY(-4px);
-}
-
-.tech-item:hover svg {
-    fill: var(--primary);
-    color: var(--primary);
-    filter: drop-shadow(0 0 8px var(--primary));
 }
 
 .tech-item:hover .tech-item-name {
@@ -672,7 +665,7 @@ img {
 }
 
 /* ==========================================================================
-   METHODOLOGIES SECTION (NEW)
+   METHODOLOGIES SECTION
    ========================================================================== */
 .methodologies-grid {
     display: grid;
@@ -793,15 +786,16 @@ img {
 }
 
 /* ==========================================================================
-   PROJECTS SECTION (ALL 10 PROJECTS)
+   PROJECTS SECTION (EXACTLY 6 PROJECTS - 3 MAIN FEATURED WITH IMAGES)
    ========================================================================== */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 28px;
 }
 
-.project-card {
+/* Featured Card with Image */
+.project-card-featured {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: 14px;
@@ -812,14 +806,14 @@ img {
     position: relative;
 }
 
-.project-card:hover {
+.project-card-featured:hover {
     border-color: var(--primary);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--primary-glow);
     transform: translateY(-6px);
 }
 
 .project-image-container {
-    height: 190px;
+    height: 200px;
     overflow: hidden;
     position: relative;
     background: #090D16;
@@ -832,8 +826,43 @@ img {
     transition: var(--transition-slow);
 }
 
-.project-card:hover .project-image {
+.project-card-featured:hover .project-image {
     transform: scale(1.05);
+}
+
+/* Standard Code Card (No Image) */
+.project-card-code {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-normal);
+    position: relative;
+}
+
+.project-card-code:hover {
+    border-color: var(--primary);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 15px var(--primary-glow);
+    transform: translateY(-4px);
+}
+
+.card-header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.card-badge-type {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--primary);
+    background: rgba(34, 211, 238, 0.08);
+    border: 1px solid rgba(34, 211, 238, 0.25);
+    padding: 4px 10px;
+    border-radius: 12px;
 }
 
 .project-card-details {
@@ -841,6 +870,10 @@ img {
     flex: 1;
     display: flex;
     flex-direction: column;
+}
+
+.project-card-code .project-card-details {
+    padding: 0;
 }
 
 .project-title {
@@ -863,13 +896,13 @@ img {
     padding: 3px 9px;
 }
 
-/* Visual Architecture Flow Strip */
+/* Architecture Flow Diagram Strip */
 .architecture-flow {
     display: flex;
     align-items: center;
     gap: 6px;
-    background: rgba(15, 23, 42, 0.8);
-    border: 1px dashed rgba(34, 211, 238, 0.3);
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px dashed rgba(34, 211, 238, 0.35);
     padding: 8px 12px;
     border-radius: 6px;
     margin-bottom: 14px;
@@ -925,13 +958,8 @@ img {
     margin-top: auto;
 }
 
-/* Expandable Toggle Projects */
-.projects-hidden {
-    display: none;
-}
-
-.projects-toggle-container {
-    margin-top: 40px;
+.projects-more-cta {
+    margin-top: 45px;
     text-align: center;
 }
 
