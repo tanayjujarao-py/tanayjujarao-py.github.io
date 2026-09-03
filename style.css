@@ -596,12 +596,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .profile-img-wrap {
-  width: 110px;
-  height: 110px;
-  border-radius: var(--radius-lg);
+  width: 160px;
+  height: 160px;
+  border-radius: var(--radius-xl);
   overflow: hidden;
   flex-shrink: 0;
-  border: 2px solid var(--bg-card);
+  border: 3px solid var(--bg-card);
   box-shadow: var(--shadow-md);
 }
 
@@ -1315,16 +1315,23 @@ h1, h2, h3, h4, h5, h6 {
   gap: 1.25rem;
 }
 
-.contact-btn-light {
-  background-color: #FFFFFF;
-  color: #0F172A;
+.contact-btn-pill {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
   font-weight: 700;
+  border-radius: var(--radius-pill);
+  padding: 0.85rem 1.6rem;
+  border: 1px solid #FFFFFF;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
 }
 
-.contact-btn-light:hover {
-  background-color: var(--accent-soft);
-  color: var(--accent);
-  transform: translateY(-2px);
+.contact-btn-pill:hover {
+  background-color: #FFFFFF !important;
+  color: var(--accent) !important;
+  border-color: #FFFFFF;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
 }
 
 .footer-bottom {
